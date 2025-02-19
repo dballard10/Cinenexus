@@ -1,8 +1,4 @@
-
-import {
-  Disclosure,
-  Menu,
-} from "@headlessui/react";
+import { Disclosure, Menu } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
@@ -16,10 +12,9 @@ const user = {
 
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-  { name: "Reports", href: "#", current: false },
+  { name: "Shows", href: "#", current: false },
+  { name: "Friends", href: "#", current: false },
+  { name: "Discover", href: "#", current: false },
 ];
 
 const userNavigation = [
@@ -31,13 +26,16 @@ const userNavigation = [
 export function Navigation() {
   return (
     <div className="relative z-50">
-      <Disclosure as="nav" className="bg-white/10 backdrop-blur-lg border-b border-white/10">
+      <Disclosure
+        as="nav"
+        className="bg-white/10 backdrop-blur-lg border-b border-white/10"
+      >
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex h-16 items-center justify-between">
                 <div className="flex items-center">
-                  <motion.div 
+                  <motion.div
                     className="shrink-0"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -91,7 +89,11 @@ export function Navigation() {
                         <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-white/5 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200">
                           <span className="absolute -inset-1.5" />
                           <span className="sr-only">Open user menu</span>
-                          <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                          <img
+                            className="h-8 w-8 rounded-full"
+                            src={user.imageUrl}
+                            alt=""
+                          />
                         </Menu.Button>
                       </motion.div>
                       <motion.div
@@ -162,11 +164,19 @@ export function Navigation() {
               <div className="border-t border-white/10 pb-3 pt-4">
                 <div className="flex items-center px-5">
                   <div className="shrink-0">
-                    <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                    <img
+                      className="h-10 w-10 rounded-full"
+                      src={user.imageUrl}
+                      alt=""
+                    />
                   </div>
                   <div className="ml-3">
-                    <div className="text-base font-medium leading-none text-white">{user.name}</div>
-                    <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
+                    <div className="text-base font-medium leading-none text-white">
+                      {user.name}
+                    </div>
+                    <div className="text-sm font-medium leading-none text-gray-400">
+                      {user.email}
+                    </div>
                   </div>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
