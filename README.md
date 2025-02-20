@@ -1,6 +1,6 @@
-# ShowTracker
+# Show N' Connect
 
-ShowTracker is a dynamic web application that allows users to keep track of the shows they've watched, leave reviews, see what their friends are watching, and contribute to global reviews. Built with modern web technologies, ShowTracker offers a seamless and interactive experience for TV and movie enthusiasts.
+Show N' Connect is a dynamic web application that allows users to keep track of the shows they've watched, leave reviews, see what their friends are watching, and contribute to global reviews. Built with modern web technologies, Show N' Connect offers a seamless and interactive experience for TV and movie enthusiasts.
 
 ## Table of Contents
 
@@ -25,9 +25,9 @@ ShowTracker is a dynamic web application that allows users to keep track of the 
 
 ## Demo
 
-![ShowTracker Demo](./assets/demo.gif)
+![Show N' Connect Demo](./assets/demo.gif)
 
-Check out a live demo [here](https://showtracker.example.com).
+Check out a live demo [here](https://show-n-connect.vercel.app/).
 
 ## Technologies Used
 
@@ -54,8 +54,8 @@ Follow these steps to get a local copy up and running.
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/showtracker.git
-   cd showtracker
+   git clone https://github.com/yourusername/ShowNConnect.git
+   cd ShowNConnect
    ```
 
 2. **Install Dependencies**
@@ -72,15 +72,7 @@ Follow these steps to get a local copy up and running.
    yarn install
    ```
 
-3. **Configure Environment Variables**
-
-   Create a `.env` file in the root directory and add the necessary environment variables:
-
-   ```env
-   VITE_API_URL=https://api.showtracker.example.com
-   ```
-
-4. **Run the Development Server**
+3. **Run the Development Server**
 
    Using npm:
 
@@ -96,7 +88,7 @@ Follow these steps to get a local copy up and running.
 
    The application will be available at `http://localhost:8080`.
 
-5. **Build for Production**
+4. **Build for Production**
 
    Using npm:
 
@@ -114,7 +106,7 @@ Follow these steps to get a local copy up and running.
 
 ## Usage
 
-Once the development server is running, you can interact with ShowTracker by:
+Once the development server is running, you can interact with Show N' Connect by:
 
 1. **Registering an Account**: Sign up with your email and create a profile.
 2. **Marking Shows as Watched**: Browse the catalog and mark shows you've watched.
