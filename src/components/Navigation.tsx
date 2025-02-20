@@ -2,19 +2,19 @@ import { Disclosure, Menu } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import defaultProfilePic from "@/components/assets/default-profile-pic.webp";
+import logo from "@/components/assets/logo.webp";
 
 const user = {
   name: "Dylan Ballard",
   email: "dylan@example.com",
-  imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+  imageUrl: defaultProfilePic,
 };
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Shows", href: "#", current: false },
+  { name: "Home", href: "/", current: true },
   { name: "Friends", href: "#", current: false },
-  { name: "Discover", href: "#", current: false },
+  { name: "Discover", href: "/discover", current: false },
 ];
 
 const userNavigation = [
@@ -41,9 +41,9 @@ export function Navigation() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <img
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=white"
-                      alt="Your Company"
+                      className="h-12 w-auto rounded-full"
+                      src={logo}
+                      alt="Show N Connect Logo"
                     />
                   </motion.div>
                   <div className="hidden md:block">
