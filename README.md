@@ -1,69 +1,127 @@
-# Welcome to your Lovable project
+# ShowTracker
 
-## Project info
+ShowTracker is a dynamic web application that allows users to keep track of the shows they've watched, leave reviews, see what their friends are watching, and contribute to global reviews. Built with modern web technologies, ShowTracker offers a seamless and interactive experience for TV and movie enthusiasts.
 
-**URL**: https://lovable.dev/projects/f107af38-8999-443b-8970-4f52f42418df
+## Table of Contents
 
-## How can I edit this code?
+- [Features](#features)
+- [Demo](#demo)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Track Watched Shows**: Easily mark the shows and movies you've watched.
+- **Leave Reviews**: Share your thoughts and ratings on your favorite shows.
+- **Friend Activity**: See what shows your friends are currently watching.
+- **Global Reviews**: Contribute to and browse reviews from the wider community.
+- **Responsive Design**: Enjoy a seamless experience across all devices.
+- **User-Friendly Interface**: Intuitive navigation and interactive components.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f107af38-8999-443b-8970-4f52f42418df) and start prompting.
+## Demo
 
-Changes made via Lovable will be committed automatically to this repo.
+![ShowTracker Demo](./assets/demo.gif)
 
-**Use your preferred IDE**
+Check out a live demo [here](https://showtracker.example.com).
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Technologies Used
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **React**: Frontend library for building user interfaces.
+- **Vite**: Fast development build tool.
+- **TypeScript**: Typed superset of JavaScript for better code reliability.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Radix UI**: Accessible UI components.
+- **Framer Motion**: Animation library for React.
+- **React Router DOM**: Routing library for React applications.
+- **React Query**: Data fetching and caching for React.
 
-Follow these steps:
+## Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Follow these steps to get a local copy up and running.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Prerequisites
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Node.js** (v14 or later)
+- **npm** or **yarn**
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### Steps
 
-**Edit a file directly in GitHub**
+1. **Clone the Repository**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+   ```bash
+   git clone https://github.com/yourusername/showtracker.git
+   cd showtracker
+   ```
 
-**Use GitHub Codespaces**
+2. **Install Dependencies**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+   Using npm:
 
-## What technologies are used for this project?
+   ```bash
+   npm install
+   ```
 
-This project is built with .
+   Using yarn:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+   ```bash
+   yarn install
+   ```
 
-## How can I deploy this project?
+3. **Configure Environment Variables**
 
-Simply open [Lovable](https://lovable.dev/projects/f107af38-8999-443b-8970-4f52f42418df) and click on Share -> Publish.
+   Create a `.env` file in the root directory and add the necessary environment variables:
 
-## I want to use a custom domain - is that possible?
+   ```env
+   VITE_API_URL=https://api.showtracker.example.com
+   ```
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+4. **Run the Development Server**
+
+   Using npm:
+
+   ```bash
+   npm run dev
+   ```
+
+   Using yarn:
+
+   ```bash
+   yarn dev
+   ```
+
+   The application will be available at `http://localhost:8080`.
+
+5. **Build for Production**
+
+   Using npm:
+
+   ```bash
+   npm run build
+   ```
+
+   Using yarn:
+
+   ```bash
+   yarn build
+   ```
+
+   The production-ready files will be in the `dist` directory.
+
+## Usage
+
+Once the development server is running, you can interact with ShowTracker by:
+
+1. **Registering an Account**: Sign up with your email and create a profile.
+2. **Marking Shows as Watched**: Browse the catalog and mark shows you've watched.
+3. **Leaving Reviews**: Rate and review the shows to share your opinions.
+4. **Connecting with Friends**: Add friends to see their activity.
+5. **Exploring Global Reviews**: Read what the community is saying about different shows.
+
+## Project Structure
+
+Here's a brief overview of the project's structure:
