@@ -1,4 +1,5 @@
-import CardGrid from "./CardGrid";
+import AllShowsGrid from "./AllShowsGrid";
+import CurrentShowsGrid from "./CurrentShowsGrid";
 import Platforms from "./Platforms";
 
 interface GridDisplayProps {
@@ -13,21 +14,21 @@ const GridDisplay = ({
   return (
     <>
       {/* Current Watches */}
-      <h1 className="text-3xl font-bold tracking-tight text-white pb-4">
+      <h1 className="text-3xl font-bold tracking-tight text-white pb-2">
         {currentWatchesText}
       </h1>
       <div className="flex flex-col gap-4">
         <Platforms />
-        <CardGrid />
+        <CurrentShowsGrid />
       </div>
 
       {/* All Watches */}
-      <h1 className="text-3xl font-bold tracking-tight text-white pb-4">
+      <h1 className="text-3xl font-bold tracking-tight text-white pb-2 pt-2">
         {allWatchesText}
       </h1>
       <div className="flex flex-col gap-4">
         <Platforms />
-        <CardGrid />
+        <AllShowsGrid />
       </div>
     </>
   );
