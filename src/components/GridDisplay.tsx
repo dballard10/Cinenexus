@@ -1,6 +1,7 @@
 import AllShowsGrid from "./AllShowsGrid";
 import CurrentShowsGrid from "./CurrentShowsGrid";
 import Platforms from "./Platforms";
+import Sort from "./Sort";
 
 interface GridDisplayProps {
   currentWatchesText: string;
@@ -18,7 +19,10 @@ const GridDisplay = ({
         {currentWatchesText}
       </h1>
       <div className="flex flex-col gap-4">
-        <Platforms />
+        <div className="flex flex-row gap-4">
+          <Platforms />
+          <Sort />
+        </div>
         <CurrentShowsGrid />
       </div>
 
@@ -27,7 +31,10 @@ const GridDisplay = ({
         {allWatchesText}
       </h1>
       <div className="flex flex-col gap-4">
-        <Platforms />
+        <div className="flex flex-row gap-4">
+          <Platforms />
+          <Sort />
+        </div>
         <AllShowsGrid />
       </div>
     </>

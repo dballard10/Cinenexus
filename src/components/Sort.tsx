@@ -1,21 +1,9 @@
 import React, { useState } from "react";
 
-const Platforms = () => {
+const Sort = () => {
   const [selectedPlatform, setSelectedPlatform] = useState<string>("");
 
-  const platforms = [
-    "Netflix",
-    "Hulu",
-    "Amazon Prime",
-    "Disney+",
-    "HBO Max",
-    "Apple TV+",
-    "Peacock",
-    "Paramount+",
-    "Showtime",
-    "Starz",
-    "Crunchyroll",
-  ];
+  const options = ["Alphabetical", "Recent", "Rating"];
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedPlatform(event.target.value);
@@ -24,15 +12,15 @@ const Platforms = () => {
   return (
     <div className="gap-2">
       <select
-        id="platform-select"
+        id="sort-select"
         value={selectedPlatform}
         onChange={handleChange}
         className="bg-gray-800 text-white border border-gray-700 w-64 p-2 pr-10 rounded-md"
       >
-        <option value="">All</option>
-        {platforms.map((platform) => (
-          <option key={platform} value={platform}>
-            {platform}
+        <option value="">Sort By</option>
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
           </option>
         ))}
       </select>
@@ -40,4 +28,4 @@ const Platforms = () => {
   );
 };
 
-export default Platforms;
+export default Sort;
