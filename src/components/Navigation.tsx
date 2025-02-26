@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import defaultProfilePic from "@/components/assets/default-profile-pic.webp";
 import logo from "@/components/assets/logo.webp";
+import { useLocation } from "react-router-dom";
 
 const user = {
   name: "Dylan Ballard",
@@ -12,9 +13,9 @@ const user = {
 };
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "Friends", href: "#", current: false },
-  { name: "Discover", href: "/discover", current: false },
+  { name: "Home", href: "/", current: false },
+  { name: "Friends", href: "/friends", current: false },
+  { name: "Profile", href: "/profile", current: false },
 ];
 
 const userNavigation = [
@@ -24,6 +25,13 @@ const userNavigation = [
 ];
 
 export function Navigation() {
+  const location = useLocation();
+
+  const navigationWithCurrent = navigation.map((item) => ({
+    ...item,
+    current: location.pathname === item.href,
+  }));
+
   return (
     <div className="relative z-50">
       <Disclosure
@@ -32,7 +40,7 @@ export function Navigation() {
       >
         {({ open }) => (
           <>
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
               <div className="flex h-16 items-center justify-between">
                 <div className="flex items-center">
                   <motion.div
@@ -48,7 +56,7 @@ export function Navigation() {
                   </motion.div>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
-                      {navigation.map((item) => (
+                      {navigationWithCurrent.map((item) => (
                         <motion.a
                           key={item.name}
                           href={item.href}
@@ -144,7 +152,7 @@ export function Navigation() {
                 exit={{ opacity: 0, y: -10 }}
                 className="space-y-1 px-2 pb-3 pt-2 sm:px-3"
               >
-                {navigation.map((item) => (
+                {navigationWithCurrent.map((item) => (
                   <Disclosure.Button
                     key={item.name}
                     as="a"
