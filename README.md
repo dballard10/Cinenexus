@@ -1,6 +1,6 @@
-# Show N' Connect
+# Cineverse
 
-Show N' Connect is a dynamic web application that allows users to keep track of the shows they've watched, leave reviews, see what their friends are watching, and contribute to global reviews. Built with modern web technologies, Show N' Connect offers a seamless and interactive experience for TV and movie enthusiasts.
+Cineverse is a dynamic web application that allows users to keep track of the shows they've watched, leave reviews, see what their friends are watching, and contribute to global reviews. Built with modern web technologies, Cineverse offers a seamless and interactive experience for TV and movie enthusiasts.
 
 ## Table of Contents
 
@@ -25,9 +25,9 @@ Show N' Connect is a dynamic web application that allows users to keep track of 
 
 ## Demo
 
-![Show N' Connect Demo](./assets/demo.gif)
+![Cineverse Demo](./assets/demo.gif)
 
-Check out a live demo [here](https://show-n-connect.vercel.app/).
+Check out a live demo [here](https://cineverse.vercel.app/).
 
 ## Technologies Used
 
@@ -54,8 +54,8 @@ Follow these steps to get a local copy up and running.
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/ShowNConnect.git
-   cd ShowNConnect
+   git clone https://github.com/yourusername/Cineverse.git
+   cd Cineverse
    ```
 
 2. **Install Dependencies**
@@ -106,7 +106,7 @@ Follow these steps to get a local copy up and running.
 
 ## Usage
 
-Once the development server is running, you can interact with Show N' Connect by:
+Once the development server is running, you can interact with Cineverse by:
 
 1. **Registering an Account**: Sign up with your email and create a profile.
 2. **Marking Shows as Watched**: Browse the catalog and mark shows you've watched.

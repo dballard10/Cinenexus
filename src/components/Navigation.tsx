@@ -3,7 +3,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import defaultProfilePic from "@/components/assets/default-profile-pic.webp";
-import logo from "@/components/assets/logo.webp";
+import logo from "@/components/assets/cineverse-logo.webp";
 import { useLocation } from "react-router-dom";
 
 const user = {
@@ -51,7 +51,7 @@ export function Navigation() {
                     <img
                       className="h-12 w-auto rounded-full"
                       src={logo}
-                      alt="Show N Connect Logo"
+                      alt="Cineverse Logo"
                     />
                   </motion.div>
                   <div className="hidden md:block">
