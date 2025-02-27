@@ -14,6 +14,7 @@ const CardGrid = ({ shows }: CardGridProps) => {
           title={show.title}
           description={show.description}
           image={show.image}
+          rating={show.rating}
         />
       ))}
     </div>

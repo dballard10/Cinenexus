@@ -32,7 +32,7 @@ const GridDisplay = ({
       {/* Favorites */}
       {favoriteShowsText && (
         <>
-          <h1 className="text-3xl font-bold tracking-tight text-white pb-2">
+          <h1 className="text-3xl font-bold tracking-tight text-white pb-2 pt-2">
             {favoriteShowsText}
           </h1>
           <div className="flex flex-col gap-4">
