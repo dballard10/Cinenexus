@@ -2,7 +2,7 @@ import dragon from "@/components/assets/dragon.webp";
 import knight from "@/components/assets/knight.webp";
 import wizard from "@/components/assets/wizard.webp";
 
-export const currentShows = [
+export const favoriteShows = [
   {
     id: 1,
     title: "Show 1",

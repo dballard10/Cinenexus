@@ -27,8 +27,8 @@ const HomePage = () => {
         <div className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4">
             <GridDisplay
-              currentWatchesText="What the world is currently watching"
-              allWatchesText="All Shows"
+              currentShowsText="What the world is currently watching"
+              allShowsText="All Shows"
             />
           </div>
         </div>

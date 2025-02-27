@@ -25,8 +25,9 @@ const FriendsPage = () => {
         <div className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4">
             <GridDisplay
-              currentWatchesText="What you're friends are currently watching"
-              allWatchesText="All of your friends' watches"
+              currentShowsText="What you're friends are currently watching"
+              allShowsText="All of your friends' watches"
+              favoriteShowsText="Your friends' favorite shows"
             />
           </div>
         </div>

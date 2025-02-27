@@ -27,8 +27,9 @@ const DiscoverPage = () => {
         <div className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4">
             <GridDisplay
-              currentWatchesText="What you've been watching"
-              allWatchesText="All of your watches"
+              currentShowsText="What you've been watching"
+              allShowsText="All of your watches"
+              favoriteShowsText="Your favorite shows"
             />
           </div>
         </div>

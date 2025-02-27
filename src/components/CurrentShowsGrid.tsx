@@ -1,10 +1,10 @@
 import CardGrid from "./CardGrid";
-import { currentWatches } from "./data/current-shows";
+import { currentShows } from "./data/current-shows";
 
 const CurrentShowsGrid = () => {
   return (
     <div>
-      <CardGrid shows={currentWatches} />
+      <CardGrid shows={currentShows} />
     </div>
   );
 };
