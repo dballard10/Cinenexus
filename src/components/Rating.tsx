@@ -8,7 +8,7 @@ const Rating = ({ rating }: RatingProps) => {
 
   return (
     <div
-      className={`inline-flex items-center px-3 rounded-full text-sm font-medium ${ratingColor} mb-2`}
+      className={`inline-flex items-center px-2 rounded-full text-sm font-medium ${ratingColor}`}
     >
       {rating}
     </div>
