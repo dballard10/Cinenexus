@@ -1,5 +1,6 @@
 import Rating from "./Rating";
 import FavoritesButton from "./FavoritesButton";
+import ShowTitle from "./ShowTitle";
 
 interface CardProps {
   id?: number;
@@ -20,7 +21,7 @@ const Card = ({ id = 0, title, description, image, rating }: CardProps) => {
       <div className="p-6">
         <div className="flex flex-row items-center justify-between mb-2">
           <div className="flex flex-row gap-3">
-            <h2 className="text-xl font-semibold text-white">{title}</h2>
+            <ShowTitle title={title} />
             <Rating rating={rating} />
           </div>
           <FavoritesButton showId={id} />

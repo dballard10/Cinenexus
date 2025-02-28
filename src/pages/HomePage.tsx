@@ -1,7 +1,5 @@
-import CardGrid from "@/components/CardGrid";
 import GenreList from "@/components/GenreList";
 import { Navigation } from "@/components/Navigation";
-import Platforms from "@/components/Platforms";
 import AsidePanel from "@/components/AsidePanel";
 import useToggleAside from "@/hooks/use-toggleAside";
 import PageHeading from "@/components/PageHeading";

@@ -19,7 +19,6 @@ const navigation = [
 ];
 
 const userNavigation = [
-  { name: "Your Profile", href: "#" },
   { name: "Settings", href: "#" },
   { name: "Sign out", href: "#" },
 ];
@@ -40,7 +39,7 @@ export function Navigation() {
       >
         {({ open }) => (
           <>
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex h-16 items-center justify-between">
                 <div className="flex items-center">
                   <motion.div
@@ -48,11 +47,13 @@ export function Navigation() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <img
-                      className="h-12 w-auto rounded-full"
-                      src={logo}
-                      alt="Cineverse Logo"
-                    />
+                    <a href="/">
+                      <img
+                        className="h-12 w-auto rounded-full"
+                        src={logo}
+                        alt="Cineverse Logo"
+                      />
+                    </a>
                   </motion.div>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
