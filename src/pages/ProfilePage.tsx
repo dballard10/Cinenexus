@@ -1,4 +1,4 @@
-import GenreList from "@/components/GenreList";
+import ContentFilters from "@/components/ContentFilters";
 import { Navigation } from "@/components/Navigation";
 import AsidePanel from "@/components/AsidePanel";
 import useToggleAside from "@/hooks/use-toggleAside";
@@ -18,9 +18,9 @@ const DiscoverPage = () => {
         <AsidePanel
           isCollapsed={isCollapsed}
           toggleCollapse={toggleCollapse}
-          title="Genres"
+          title="Filters"
         >
-          <GenreList />
+          <ContentFilters />
         </AsidePanel>
         <div className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4">

@@ -1,13 +1,13 @@
 import Genre from "./Genre";
 
 const GenreList = () => {
+  const genres = ["Action", "Adventure", "Animation", "Comedy", "Drama"];
+
   return (
-    <div className="space-y-2">
-      <Genre name="Action" />
-      <Genre name="Adventure" />
-      <Genre name="Animation" />
-      <Genre name="Comedy" />
-      <Genre name="Drama" />
+    <div className="flex flex-col gap-2">
+      {genres.map((genre) => (
+        <Genre key={genre} name={genre} />
+      ))}
     </div>
   );
 };
