@@ -18,7 +18,7 @@ const ShowDetails = ({ show }: ShowDetailsProps) => {
         <p className="text-2xl font-bold">{show.description}</p>
       </div>
       <div className="bg-gray-900 rounded-lg p-4">
-        <ShowImages image={show.image} title={show.title} />
+        <ShowImages images={show.images} title={show.title} />
       </div>
     </div>
   );

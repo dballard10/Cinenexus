@@ -13,7 +13,7 @@ const CardGrid = ({ shows }: CardGridProps) => {
           key={`${show.title}-${index}`}
           title={show.title}
           description={show.description}
-          image={show.image}
+          image={show.images[0]}
           rating={show.rating}
         />
       ))}

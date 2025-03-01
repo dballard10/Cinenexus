@@ -3,6 +3,8 @@ import PageHeading from "@/components/PageHeading";
 import ShowDetails from "@/components/ShowDetails";
 import { useParams } from "react-router-dom";
 import dragon from "@/components/assets/dragon.webp";
+import knight from "@/components/assets/knight.webp";
+import wizard from "@/components/assets/wizard.webp";
 
 const ShowDetailsPage = () => {
   const { title } = useParams();
@@ -11,7 +13,7 @@ const ShowDetailsPage = () => {
     id: 1,
     title: "Show 1",
     description: "Description for Show 1",
-    image: dragon,
+    images: [dragon, knight, wizard],
     rating: 8.5,
   };
 
