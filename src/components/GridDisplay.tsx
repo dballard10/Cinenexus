@@ -4,7 +4,7 @@ import FavoritesGrid from "./FavoritesGrid";
 import SearchBar from "./SearchBar";
 
 interface GridDisplayProps {
-  currentShowsText: string;
+  currentShowsText?: string;
   allShowsText: string;
   favoriteShowsText?: string;
 }
@@ -18,12 +18,16 @@ const GridDisplay = ({
     <>
       <SearchBar />
       {/* Current Watches */}
-      <h1 className="text-3xl font-bold tracking-tight text-white pb-2">
-        {currentShowsText}
-      </h1>
-      <div className="flex flex-col gap-4">
-        <CurrentShowsGrid />
-      </div>
+      {currentShowsText && (
+        <>
+          <h1 className="text-3xl font-bold tracking-tight text-white pb-2">
+            {currentShowsText}
+          </h1>
+          <div className="flex flex-col gap-4">
+            <CurrentShowsGrid />
+          </div>
+        </>
+      )}
 
       {/* Favorites */}
       {favoriteShowsText && (

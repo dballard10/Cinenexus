@@ -1,10 +1,17 @@
 import CollapseButton from "./CollapseButton";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+
+interface TabItem {
+  label: string;
+  content: React.ReactNode;
+}
 
 interface AsidePanelProps {
   isCollapsed: boolean;
   toggleCollapse: () => void;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   title: string;
+  tabs?: TabItem[];
 }
 
 const AsidePanel = ({
@@ -12,6 +19,7 @@ const AsidePanel = ({
   toggleCollapse,
   children,
   title,
+  tabs,
 }: AsidePanelProps) => {
   return (
     <aside
@@ -23,7 +31,33 @@ const AsidePanel = ({
         toggleCollapse={toggleCollapse}
         isCollapsed={isCollapsed}
       />
-      {!isCollapsed && children}
+
+      {!isCollapsed && (
+        <>
+          {tabs ? (
+            <Tabs defaultValue={tabs[0]?.label} className="w-full">
+              <TabsList className="bg-gray-800 w-full mb-4">
+                {tabs.map((tab) => (
+                  <TabsTrigger
+                    key={tab.label}
+                    value={tab.label}
+                    className="text-white data-[state=active]:bg-gray-700"
+                  >
+                    {tab.label}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+              {tabs.map((tab) => (
+                <TabsContent key={tab.label} value={tab.label}>
+                  {tab.content}
+                </TabsContent>
+              ))}
+            </Tabs>
+          ) : (
+            children
+          )}
+        </>
+      )}
     </aside>
   );
 };
