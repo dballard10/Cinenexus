@@ -1,6 +1,6 @@
-# Reel Friends
+# Cinenexus
 
-Reel Friends is a dynamic web application that allows users to keep track of the shows they've watched, leave reviews, see what their friends are watching, and contribute to global reviews. Built with modern web technologies, Reel Friends offers a seamless and interactive experience for TV and movie enthusiasts.
+Cinenexus is a dynamic web application that allows users to keep track of the shows they've watched, leave reviews, see what their friends are watching, and contribute to global reviews. Built with modern web technologies, Cinenexus offers a seamless and interactive experience for TV and movie enthusiasts.
 
 ## Table of Contents
 
@@ -25,9 +25,9 @@ Reel Friends is a dynamic web application that allows users to keep track of the
 
 ## Demo
 
-![Reel Friends Demo](./assets/demo.gif)
+![Cinenexus Demo](./assets/demo.gif)
 
-Check out a live demo [here](https://Reel Friends.vercel.app/).
+Check out a live demo [here](https://Cinenexus.vercel.app/).
 
 ## Technologies Used
 
@@ -54,8 +54,8 @@ Follow these steps to get a local copy up and running.
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/reel-friends.git
-   cd reel-friends
+   git clone https://github.com/yourusername/Cinenexus.git
+   cd Cinenexus
    ```
 
 2. **Install Dependencies**
@@ -106,7 +106,7 @@ Follow these steps to get a local copy up and running.
 
 ## Usage
 
-Once the development server is running, you can interact with Reel Friends by:
+Once the development server is running, you can interact with Cinenexus by:
 
 1. **Registering an Account**: Sign up with your email and create a profile.
 2. **Marking Shows as Watched**: Browse the catalog and mark shows you've watched.
