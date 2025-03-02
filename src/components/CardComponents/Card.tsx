@@ -4,31 +4,41 @@ import ShowTitle from "./ShowTitle";
 
 interface CardProps {
   id?: number;
-  title: string;
-  description: string;
-  image: string;
-  rating: number;
+  name: string;
+  backdrop_path: string;
+  vote_average: number;
+  type: "show" | "movie";
 }
 
-const Card = ({ id = 0, title, description, image, rating }: CardProps) => {
+const Card = ({
+  id = 0,
+  name,
+  backdrop_path,
+  vote_average,
+  type,
+}: CardProps) => {
   return (
     <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg hover:scale-105 transition-all duration-300 overflow-hidden">
       <a href={`/shows/${id}`}>
         <img
-          src={image}
-          alt={title}
+          src={backdrop_path}
+          alt={name}
           className="w-full h-48 object-cover rounded-t-lg"
         />
       </a>
       <div className="p-6">
         <div className="flex flex-row items-center justify-between mb-2">
-          <div className="flex flex-row gap-3">
-            <ShowTitle title={title} />
-            <Rating rating={rating} />
+          <div className="flex flex-col">
+            <ShowTitle title={name} />
+            <div className="text-sm text-gray-400 mt-1">
+              {type === "show" ? "Show" : "Movie"}
+            </div>
           </div>
-          <FavoritesButton showId={id} />
+          <div className="flex flex-row gap-2">
+            <Rating rating={vote_average} />
+            <FavoritesButton showId={id} />
+          </div>
         </div>
-        <p className="text-gray-300">{description}</p>
       </div>
     </div>
   );

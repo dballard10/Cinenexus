@@ -1,5 +1,5 @@
-import AllShowsGrid from "./AllShowsGrid";
-import CurrentShowsGrid from "./CurrentShowsGrid";
+import ShowsGrid from "./ShowsGrid";
+import CurrentShowsGrid from "./CurrentGrid";
 import FavoritesGrid from "./FavoritesGrid";
 import SearchBar from "../Filters/SearchBar";
 
@@ -46,7 +46,7 @@ const GridDisplay = ({
         {allShowsText}
       </h1>
       <div className="flex flex-col gap-4">
-        <AllShowsGrid />
+        <ShowsGrid />
       </div>
     </>
   );

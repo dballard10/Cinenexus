@@ -3,18 +3,17 @@ import PageHeading from "@/components/PageComponents/PageHeading";
 import ShowDetails from "../components/ShowDetails/ShowDetails";
 import { useParams } from "react-router-dom";
 import dragon from "../assets/dragon.webp";
-import knight from "../assets/knight.webp";
-import wizard from "../assets/wizard.webp";
 
 const ShowDetailsPage = () => {
   const { title } = useParams();
 
   const show = {
     id: 1,
-    title: "Show 1",
-    description: "Description for Show 1",
-    images: [dragon, knight, wizard],
-    rating: 8.5,
+    name: "Show 1",
+    overview: "Description for Show 1",
+    poster_path: dragon,
+    backdrop_path: dragon,
+    vote_average: 8.5,
   };
 
   return (
