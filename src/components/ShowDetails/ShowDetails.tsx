@@ -1,10 +1,10 @@
-import { Show } from "../../entities/shows";
+import { Media } from "../../entities/shows";
 import FavoritesButton from "../CardComponents/FavoritesButton";
 import Rating from "../CardComponents/Rating";
 import ShowImages from "./ShowImages";
 
 interface ShowDetailsProps {
-  show: Show;
+  show: Media;
 }
 
 const ShowDetails = ({ show }: ShowDetailsProps) => {

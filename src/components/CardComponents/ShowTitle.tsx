@@ -1,14 +1,14 @@
 interface ShowTitleProps {
-  title: string;
+  name: string;
 }
 
-const ShowTitle = ({ title }: ShowTitleProps) => {
+const ShowTitle = ({ name }: ShowTitleProps) => {
   return (
     <a
-      href={`/Shows/${title.replace(/\s+/g, "-")}`}
+      href={`/Shows/${name.replace(/\s+/g, "-")}`}
       className="text-xl font-semibold text-white cursor-pointer transition-transform hover:scale-105"
     >
-      {title}
+      {name}
     </a>
   );
 };
