@@ -1,8 +1,8 @@
 import Card from "./Card";
-import { Show } from "../../entities/shows";
+import { Media } from "../../entities/shows";
 
 interface CardGridProps {
-  shows: Show[];
+  shows: Media[];
 }
 
 const CardGrid = ({ shows }: CardGridProps) => {
@@ -12,9 +12,9 @@ const CardGrid = ({ shows }: CardGridProps) => {
         <Card
           key={`${show.name}-${index}`}
           name={show.name}
-          backdrop_path={show.backdrop_path}
+          poster_path={show.poster_path}
           vote_average={show.vote_average}
-          type={"show"}
+          media_type={show.media_type as "tv" | "movie"}
         />
       ))}
     </div>

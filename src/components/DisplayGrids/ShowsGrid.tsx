@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import CardGrid from "../CardComponents/CardGrid";
-import { Show } from "../../entities/shows";
+import { Media } from "../../entities/shows";
 import axios from "axios";
 
 const options = {
@@ -14,7 +14,7 @@ const options = {
 };
 
 const ShowsGrid = () => {
-  const [shows, setShows] = useState<Show[]>([]);
+  const [shows, setShows] = useState<Media[]>([]);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -25,13 +25,14 @@ const ShowsGrid = () => {
       .then((response) => {
         console.log("API Response:", response);
         if (response && response.data.results) {
-          const shows: Show[] = response.data.results.map((show: any) => ({
+          const shows: Media[] = response.data.results.map((show: any) => ({
             id: show.id,
             name: show.name,
             overview: show.overview,
             poster_path: show.poster_path,
             backdrop_path: show.backdrop_path,
             vote_average: show.vote_average,
+            media_type: "tv",
           }));
           setShows(shows);
         } else {
