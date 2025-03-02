@@ -1,6 +1,6 @@
-import dragon from "@/components/assets/dragon.webp";
-import knight from "@/components/assets/knight.webp";
-import wizard from "@/components/assets/wizard.webp";
+import dragon from "../assets/dragon.webp";
+import knight from "../assets/knight.webp";
+import wizard from "../assets/wizard.webp";
 
 export const favoriteShows = [
   {

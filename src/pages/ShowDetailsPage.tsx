@@ -1,10 +1,10 @@
-import { Navigation } from "@/components/Navigation";
-import PageHeading from "@/components/PageHeading";
-import ShowDetails from "@/components/ShowDetails";
+import { Navigation } from "@/components/PageComponents/Navigation";
+import PageHeading from "@/components/PageComponents/PageHeading";
+import ShowDetails from "../components/ShowDetails/ShowDetails";
 import { useParams } from "react-router-dom";
-import dragon from "@/components/assets/dragon.webp";
-import knight from "@/components/assets/knight.webp";
-import wizard from "@/components/assets/wizard.webp";
+import dragon from "../assets/dragon.webp";
+import knight from "../assets/knight.webp";
+import wizard from "../assets/wizard.webp";
 
 const ShowDetailsPage = () => {
   const { title } = useParams();

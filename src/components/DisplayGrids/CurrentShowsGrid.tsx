@@ -1,5 +1,5 @@
-import CardGrid from "./CardGrid";
-import { currentShows } from "./data/current-shows";
+import CardGrid from "../CardComponents/CardGrid";
+import { currentShows } from "../../data/current-shows";
 
 const CurrentShowsGrid = () => {
   return (
