@@ -1,5 +1,5 @@
-import { allShows } from "./data/all-shows";
-import CardGrid from "./CardGrid";
+import { allShows } from "../../data/all-shows";
+import CardGrid from "../CardComponents/CardGrid";
 
 const AllShowsGrid = () => {
   return (

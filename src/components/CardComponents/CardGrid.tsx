@@ -1,5 +1,5 @@
 import Card from "./Card";
-import { Show } from "./entities/shows";
+import { Show } from "../../entities/shows";
 
 interface CardGridProps {
   shows: Show[];

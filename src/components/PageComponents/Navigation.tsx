@@ -2,8 +2,8 @@ import { Disclosure, Menu } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import defaultProfilePic from "@/components/assets/default-profile-pic.webp";
-import logo from "@/components/assets/cinenexus-logo.webp";
+import defaultProfilePic from "../../assets/default-profile-pic.webp";
+import logo from "../../assets/cinenexus-logo.webp";
 import { useLocation } from "react-router-dom";
 
 const user = {

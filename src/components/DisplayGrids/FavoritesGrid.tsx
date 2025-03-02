@@ -1,5 +1,5 @@
-import CardGrid from "./CardGrid";
-import { favoriteShows } from "./data/favorite-shows";
+import CardGrid from "../CardComponents/CardGrid";
+import { favoriteShows } from "../../data/favorite-shows";
 
 const FavoritesGrid = () => {
   return (

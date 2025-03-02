@@ -1,6 +1,6 @@
-import { Show } from "./entities/shows";
-import FavoritesButton from "./FavoritesButton";
-import Rating from "./Rating";
+import { Show } from "../../entities/shows";
+import FavoritesButton from "../CardComponents/FavoritesButton";
+import Rating from "../CardComponents/Rating";
 import ShowImages from "./ShowImages";
 
 interface ShowDetailsProps {

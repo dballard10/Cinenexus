@@ -1,7 +1,7 @@
 import AllShowsGrid from "./AllShowsGrid";
 import CurrentShowsGrid from "./CurrentShowsGrid";
 import FavoritesGrid from "./FavoritesGrid";
-import SearchBar from "./SearchBar";
+import SearchBar from "../Filters/SearchBar";
 
 interface GridDisplayProps {
   currentShowsText?: string;

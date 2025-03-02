@@ -1,9 +1,9 @@
-import ContentFilters from "@/components/ContentFilters";
-import { Navigation } from "@/components/Navigation";
-import AsidePanel from "@/components/AsidePanel";
-import useToggleAside from "@/hooks/use-toggleAside";
-import PageHeading from "@/components/PageHeading";
-import GridDisplay from "@/components/GridDisplay";
+import ContentFilters from "../components/Filters/ContentFilters";
+import { Navigation } from "../components/PageComponents/Navigation";
+import AsidePanel from "../components/Aside/AsidePanel";
+import useToggleAside from "../hooks/use-toggleAside";
+import PageHeading from "../components/PageComponents/PageHeading";
+import GridDisplay from "../components/DisplayGrids/GridDisplay";
 
 const HomePage = () => {
   const { isCollapsed, toggleCollapse } = useToggleAside({

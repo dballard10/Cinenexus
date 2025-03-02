@@ -1,5 +1,5 @@
 import Friend from "./Friend";
-import defaultImage from "./assets/default-profile-pic.webp";
+import defaultImage from "../../assets/default-profile-pic.webp";
 
 const FriendsList = () => {
   const friends = [
