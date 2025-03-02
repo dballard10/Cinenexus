@@ -13,12 +13,12 @@ const ShowDetails = ({ show }: ShowDetailsProps) => {
       <div className="bg-gray-900 rounded-lg p-4">
         <div className="flex gap-2 pb-2">
           <FavoritesButton showId={show.id} />
-          <Rating rating={show.rating} />
+          <Rating rating={show.vote_average} />
         </div>
-        <p className="text-2xl font-bold">{show.description}</p>
+        <p className="text-2xl font-bold">{show.overview}</p>
       </div>
       <div className="bg-gray-900 rounded-lg p-4">
-        <ShowImages images={show.images} title={show.title} />
+        <ShowImages image={show.backdrop_path} title={show.name} />
       </div>
     </div>
   );
