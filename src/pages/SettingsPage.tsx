@@ -1,6 +1,6 @@
-import { Navigation } from "@/components/PageComponents/Navigation";
-import PageHeading from "@/components/PageComponents/PageHeading";
-import SettingsList from "@/components/Settings/SettingsList";
+import { Navigation } from "@/components/page-components/Navigation";
+import PageHeading from "@/components/page-components/PageHeading";
+import SettingsList from "@/components/settings/SettingsList";
 import { useState } from "react";
 const SettingsPage = () => {
   const [selectedSetting, setSelectedSetting] = useState<number | null>(null);

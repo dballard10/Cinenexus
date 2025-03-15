@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { Media } from "../../entities/shows";
-import FavoritesButton from "../CardComponents/FavoritesButton";
-import Rating from "../CardComponents/Rating";
+import { Media } from "../../entities/media";
+import FavoritesButton from "../card-components/FavoritesButton";
+import Rating from "../card-components/Rating";
 import ShowImages from "./ShowImages";
 import axios from "axios";
 

@@ -1,6 +1,6 @@
-import { Navigation } from "@/components/PageComponents/Navigation";
-import PageHeading from "@/components/PageComponents/PageHeading";
-import ShowDetails from "../components/ShowDetails/ShowDetails";
+import { Navigation } from "@/components/page-components/Navigation";
+import PageHeading from "@/components/page-components/PageHeading";
+import ShowDetails from "../components/show-details/ShowDetails";
 import { useLocation, useParams } from "react-router-dom";
 import { useState } from "react";
 

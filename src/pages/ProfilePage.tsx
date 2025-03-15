@@ -1,9 +1,9 @@
-import ContentFilters from "../components/Filters/ContentFilters";
-import { Navigation } from "../components/PageComponents/Navigation";
-import AsidePanel from "../components/Aside/AsidePanel";
+import ContentFilters from "../components/filters/ContentFilters";
+import { Navigation } from "../components/page-components/Navigation";
+import AsidePanel from "../components/page-components/AsidePanel";
 import useToggleAside from "../hooks/use-toggleAside";
-import PageHeading from "../components/PageComponents/PageHeading";
-import GridDisplay from "../components/DisplayGrids/DisplayContent";
+import PageHeading from "../components/page-components/PageHeading";
+import GridDisplay from "../components/display-grids/DisplayContent";
 
 const ProfilePage = () => {
   const { isCollapsed, toggleCollapse } = useToggleAside({
