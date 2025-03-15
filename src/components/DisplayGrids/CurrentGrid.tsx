@@ -34,6 +34,7 @@ const CurrentGrid = () => {
             media_type: show.media_type,
           }));
           setShows(shows);
+          console.log(shows);
         } else {
           setError("Invalid response");
         }
