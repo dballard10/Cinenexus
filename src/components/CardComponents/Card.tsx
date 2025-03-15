@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import Rating from "./Rating";
 import FavoritesButton from "./FavoritesButton";
 import ShowTitle from "./ShowTitle";
 import CardImage from "./CardImage";
 
 interface CardProps {
-  id?: number;
+  id: number;
   name: string;
   poster_path: string;
   vote_average: number;
@@ -12,7 +13,7 @@ interface CardProps {
 }
 
 const Card = ({
-  id = 0,
+  id,
   name,
   poster_path,
   vote_average,
@@ -20,9 +21,9 @@ const Card = ({
 }: CardProps) => {
   return (
     <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg hover:scale-105 transition-all duration-300 overflow-hidden">
-      <a href={`/shows/${id}`}>
+      <Link to={`/shows/${id}`} state={{ id, mediaType: media_type }}>
         <CardImage poster_path={poster_path} />
-      </a>
+      </Link>
       <div className="p-6">
         <div className="flex flex-row items-center justify-between mb-2">
           <div className="flex flex-col">

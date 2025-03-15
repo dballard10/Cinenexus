@@ -3,7 +3,7 @@ import { Navigation } from "../components/PageComponents/Navigation";
 import AsidePanel from "../components/Aside/AsidePanel";
 import useToggleAside from "../hooks/use-toggleAside";
 import PageHeading from "../components/PageComponents/PageHeading";
-import GridDisplay from "../components/DisplayGrids/GridDisplay";
+import GridDisplay from "../components/DisplayGrids/DisplayContent";
 
 const ProfilePage = () => {
   const { isCollapsed, toggleCollapse } = useToggleAside({
