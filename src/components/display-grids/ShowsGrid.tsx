@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import CardGrid from "../CardComponents/CardGrid";
-import { Media } from "../../entities/shows";
+import CardGrid from "../card-components/CardGrid";
+import { Media } from "../../entities/media";
 import axios from "axios";
 
 const options = {
@@ -51,7 +51,7 @@ const ShowsGrid = () => {
 
   return (
     <div>
-      <CardGrid shows={shows} />
+      <CardGrid media={shows} />
     </div>
   );
 };
