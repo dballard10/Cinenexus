@@ -1,6 +1,6 @@
 import CardGrid from "../card-components/CardGrid";
 import { Media } from "@/entities/media";
-import usePopular from "@/hooks/use-popular-media";
+import usePopular from "@/hooks/use-popular";
 
 const CurrentGrid = () => {
   const { data: shows, isLoading, error } = usePopular();
