@@ -13,7 +13,9 @@ const CardGrid = ({ media: shows }: CardGridProps) => {
           key={`${show.id}-${index}`}
           id={show.id}
           name={show.name}
+          overview={show.overview}
           poster_path={show.poster_path}
+          backdrop_path={show.backdrop_path}
           vote_average={show.vote_average}
           media_type={show.media_type as "tv" | "movie"}
         />

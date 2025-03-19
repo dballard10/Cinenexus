@@ -1,18 +1,29 @@
+import useImages from "@/hooks/use-images";
+
 interface ShowImagesProps {
-  image: string;
   title: string;
+  id: number;
+  media_type: string;
 }
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
-const ShowImages = ({ image, title }: ShowImagesProps) => {
-  const fullImageUrl = image.startsWith("http")
-    ? image
-    : `${IMAGE_BASE_URL}${image}`;
+const ShowImages = ({ title, id, media_type }: ShowImagesProps) => {
+  const { data: images } = useImages(id, media_type);
+
+  console.log(images);
+  console.log(title);
 
   return (
     <div className="grid grid-cols-2 gap-3">
-      <img src={fullImageUrl} alt={title} className="rounded-lg" />
+      {images?.data.backdrops.map((image, index) => (
+        <img
+          key={`${image.file_path}-${index}`}
+          src={`${IMAGE_BASE_URL}${image.file_path}`}
+          alt={title}
+          className="rounded-lg"
+        />
+      ))}
     </div>
   );
 };

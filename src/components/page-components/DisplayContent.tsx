@@ -1,5 +1,5 @@
-import CurrentShowsGrid from "./CurrentGrid";
-import FavoritesGrid from "./FavoritesGrid";
+import CurrentShowsGrid from "../content-grids/CurrentGrid";
+import FavoritesGrid from "../content-grids/FavoritesGrid";
 import SearchBar from "../filters/SearchBar";
 
 interface GridDisplayProps {
