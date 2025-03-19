@@ -3,7 +3,7 @@ import { Navigation } from "../components/page-components/Navigation";
 import AsidePanel from "../components/page-components/AsidePanel";
 import useToggleAside from "../hooks/use-toggleAside";
 import PageHeading from "../components/page-components/PageHeading";
-import GridDisplay from "../components/page-components/DisplayContent";
+import DiscoverContent from "../components/page-components/media-content/DiscoverContent";
 
 const HomePage = () => {
   const { isCollapsed, toggleCollapse } = useToggleAside({
@@ -24,7 +24,7 @@ const HomePage = () => {
         </AsidePanel>
         <div className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4">
-            <GridDisplay currentShowsText="What the world is currently watching" />
+            <DiscoverContent />
           </div>
         </div>
       </main>
