@@ -23,7 +23,7 @@ const CardImage = ({
 
   return (
     <Link
-      to={`/shows/${name.toLowerCase().replace(/ /g, "-")}`}
+      to={`/media/${name.toLowerCase().replace(/ /g, "-")}`}
       state={{ id: id.toString(), mediaType: media_type }}
       onClick={handleCardClick}
     >

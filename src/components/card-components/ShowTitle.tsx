@@ -17,7 +17,7 @@ const ShowTitle = ({
 
   return (
     <Link
-      to={`/shows/${name.toLowerCase().replace(/ /g, "-")}`}
+      to={`/media/${name.toLowerCase().replace(/ /g, "-")}`}
       state={{ id: id.toString(), mediaType: media_type }}
       onClick={handleCardClick}
       className="text-xl font-semibold text-white cursor-pointer transition-transform hover:scale-105"
