@@ -1,6 +1,6 @@
 import { Navigation } from "@/components/page-components/Navigation";
 import PageHeading from "@/components/page-components/PageHeading";
-import ShowDetails from "@/components/media-details/MediaDetails";
+import MediaDetails from "@/components/media-details/MediaDetails";
 import useShowStore from "@/hooks/use-media-store";
 
 const MediaDetailsPage = () => {
@@ -12,7 +12,7 @@ const MediaDetailsPage = () => {
       <PageHeading title={selectedShow?.name} />
       <main className="flex h-full">
         <div className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
-          <ShowDetails />
+          <MediaDetails />
         </div>
       </main>
     </div>

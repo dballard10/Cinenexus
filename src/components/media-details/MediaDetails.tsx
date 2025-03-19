@@ -1,24 +1,29 @@
 import useShowStore from "@/hooks/use-media-store";
 import Rating from "../card-components/Rating";
 import FavoritesButton from "../card-components/FavoritesButton";
-import MediaImages from "./MediaImages";
+import MediaImages from "./Images";
 import MediaType from "../card-components/MediaType";
-import MediaTrailer from "./MediaTrailer";
+import MediaTrailer from "./Trailer";
+import Overview from "./Overview";
+import ReleaseDate from "./ReleaseDate";
 
-const ShowDetails = () => {
+const MediaDetails = () => {
   const selectedShow = useShowStore((state) => state.selectedShow);
 
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
       <div className="bg-gray-900 rounded-lg p-4">
         <div className="flex gap-2 pb-2 justify-between">
-          <MediaType media_type={selectedShow.media_type} />
+          <div className="flex gap-4 items-center">
+            <MediaType media_type={selectedShow.media_type} />
+            <ReleaseDate release_date={selectedShow.release_date} />
+          </div>
           <div className="flex gap-2">
             <FavoritesButton showId={selectedShow.id} />
             <Rating rating={selectedShow.vote_average} />
           </div>
         </div>
-        <p className="text-lg">{selectedShow.overview}</p>
+        <Overview overview={selectedShow.overview} />
       </div>
       <div className="bg-gray-900 rounded-lg p-4 flex flex-col gap-4">
         <MediaTrailer
@@ -36,4 +41,4 @@ const ShowDetails = () => {
   );
 };
 
-export default ShowDetails;
+export default MediaDetails;
