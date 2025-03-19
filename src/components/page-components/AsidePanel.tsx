@@ -1,4 +1,4 @@
-import CollapseButton from "../buttons/CollapseButton";
+import CollapseButton from "../filters/CollapseButton";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 interface TabItem {

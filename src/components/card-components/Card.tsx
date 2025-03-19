@@ -4,41 +4,36 @@ import MediaTitle from "./MediaTitle";
 import CardImage from "./CardImage";
 import useShowStore from "@/hooks/use-media-store";
 import MediaType from "./MediaType";
+import useMediaDetails from "@/hooks/use-media-details";
 
 interface CardProps {
   id: number;
   name: string;
-  overview: string;
   poster_path: string;
-  backdrop_path?: string;
   vote_average: number;
-  media_type: "tv" | "movie";
+  media_type: string;
 }
 
 const Card = ({
   id,
   name,
-  overview,
   poster_path,
-  backdrop_path,
   vote_average,
-  media_type,
+  media_type: rawMediaType,
 }: CardProps) => {
   const setSelectedShow = useShowStore((state) => state.setSelectedShow);
 
-  const handleCardClick = () => {
-    const showData = {
-      id: id,
-      name: name,
-      overview: overview,
-      poster_path: poster_path,
-      backdrop_path: backdrop_path,
-      vote_average: vote_average,
-      media_type: media_type,
-    };
+  const media_type = ["tv", "movie"].includes(rawMediaType)
+    ? (rawMediaType as "tv" | "movie")
+    : "movie";
 
-    console.log("Show clicked:", showData);
-    setSelectedShow(showData);
+  const { data: showData, isLoading, error } = useMediaDetails(id, media_type);
+
+  const handleCardClick = () => {
+    if (!isLoading && !error && showData) {
+      console.log("Show clicked:", showData);
+      setSelectedShow(showData as any);
+    }
   };
 
   return (
