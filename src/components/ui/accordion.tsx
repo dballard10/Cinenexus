@@ -6,6 +6,15 @@ import { cn } from "@/lib/utils";
 
 const Accordion = AccordionPrimitive.Root;
 
+// Add a MultipleAccordion component with type="multiple" set by default
+const AccordionMultiple = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>
+>(({ ...props }, ref) => (
+  <AccordionPrimitive.Root ref={ref} type="multiple" {...props} />
+));
+AccordionMultiple.displayName = "AccordionMultiple";
+
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
@@ -53,4 +62,10 @@ const AccordionContent = React.forwardRef<
 
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
+export {
+  Accordion,
+  AccordionMultiple,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+};
