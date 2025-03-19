@@ -1,5 +1,5 @@
 import {
-  Accordion,
+  AccordionMultiple,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
@@ -10,7 +10,7 @@ import PlatformList from "./PlatformList";
 
 const ContentFilters = () => {
   return (
-    <Accordion type="single" collapsible className="w-full">
+    <AccordionMultiple type="multiple" className="w-full">
       <AccordionItem value="genres">
         <AccordionTrigger className="text-white hover:scale-105">
           Genres
@@ -37,7 +37,7 @@ const ContentFilters = () => {
           <SortList />
         </AccordionContent>
       </AccordionItem>
-    </Accordion>
+    </AccordionMultiple>
   );
 };
 
