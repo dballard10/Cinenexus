@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import Rating from "./Rating";
 import FavoritesButton from "./FavoritesButton";
-import ShowTitle from "./ShowTitle";
+import MediaTitle from "./MediaTitle";
 import CardImage from "./CardImage";
 import useShowStore from "@/hooks/use-media-store";
 import MediaType from "./MediaType";
@@ -54,7 +53,7 @@ const Card = ({
       <div className="p-6">
         <div className="flex flex-row items-center justify-between mb-2">
           <div className="flex flex-col">
-            <ShowTitle
+            <MediaTitle
               name={name}
               id={id}
               media_type={media_type}

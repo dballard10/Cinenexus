@@ -3,6 +3,7 @@ import Rating from "../card-components/Rating";
 import FavoritesButton from "../card-components/FavoritesButton";
 import MediaImages from "./MediaImages";
 import MediaType from "../card-components/MediaType";
+import MediaTrailer from "./MediaTrailer";
 
 const ShowDetails = () => {
   const selectedShow = useShowStore((state) => state.selectedShow);
@@ -19,7 +20,12 @@ const ShowDetails = () => {
         </div>
         <p className="text-lg">{selectedShow.overview}</p>
       </div>
-      <div className="bg-gray-900 rounded-lg p-4">
+      <div className="bg-gray-900 rounded-lg p-4 flex flex-col gap-4">
+        <MediaTrailer
+          id={selectedShow.id}
+          media_type={selectedShow.media_type}
+          title={selectedShow.name}
+        />
         <MediaImages
           id={selectedShow.id}
           media_type={selectedShow.media_type}
