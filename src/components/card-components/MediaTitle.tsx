@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
 
-interface ShowTitleProps {
+interface MediaTitleProps {
   name: string;
   id: number;
   media_type: string;
   handleCardClick: () => void;
 }
 
-const ShowTitle = ({
+const MediaTitle = ({
   name,
   id,
   media_type,
   handleCardClick,
-}: ShowTitleProps) => {
+}: MediaTitleProps) => {
   const link = name;
 
   return (
@@ -27,4 +27,4 @@ const ShowTitle = ({
   );
 };
 
-export default ShowTitle;
+export default MediaTitle;
