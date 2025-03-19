@@ -1,7 +1,7 @@
 import useShowStore from "@/hooks/use-media-store";
 import Rating from "../card-components/Rating";
 import FavoritesButton from "../card-components/FavoritesButton";
-import ShowImages from "./ShowImages";
+import MediaImages from "./MediaImages";
 import MediaType from "../card-components/MediaType";
 
 const ShowDetails = () => {
@@ -20,7 +20,7 @@ const ShowDetails = () => {
         <p className="text-lg">{selectedShow.overview}</p>
       </div>
       <div className="bg-gray-900 rounded-lg p-4">
-        <ShowImages
+        <MediaImages
           id={selectedShow.id}
           media_type={selectedShow.media_type}
           title={selectedShow.name}

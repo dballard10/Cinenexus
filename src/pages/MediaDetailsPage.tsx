@@ -1,9 +1,9 @@
 import { Navigation } from "@/components/page-components/Navigation";
 import PageHeading from "@/components/page-components/PageHeading";
-import ShowDetails from "@/components/show-details/ShowDetails";
+import ShowDetails from "@/components/media-details/MediaDetails";
 import useShowStore from "@/hooks/use-media-store";
 
-const ShowDetailsPage = () => {
+const MediaDetailsPage = () => {
   const selectedShow = useShowStore((state) => state.selectedShow);
 
   return (
@@ -19,4 +19,4 @@ const ShowDetailsPage = () => {
   );
 };
 
-export default ShowDetailsPage;
+export default MediaDetailsPage;
