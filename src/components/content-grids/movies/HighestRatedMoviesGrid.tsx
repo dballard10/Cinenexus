@@ -1,9 +1,9 @@
 import CardGrid from "../../card-components/CardGrid";
 import { Media } from "@/entities/media";
-import useHighestRated from "@/hooks/use-highest-rated";
+import useHighestRatedMovies from "@/hooks/use-highest-rated-movies";
 
-const HighestRatedGrid = () => {
-  const { data: shows, isLoading, error } = useHighestRated();
+const HighestRatedMoviesGrid = () => {
+  const { data: shows, isLoading, error } = useHighestRatedMovies();
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {(error as Error).message}</div>;
@@ -15,4 +15,4 @@ const HighestRatedGrid = () => {
   );
 };
 
-export default HighestRatedGrid;
+export default HighestRatedMoviesGrid;

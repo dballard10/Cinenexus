@@ -2,7 +2,6 @@ import ContentFilters from "../components/filters/ContentFilters";
 import { Navigation } from "../components/page-components/Navigation";
 import AsidePanel from "../components/page-components/AsidePanel";
 import useToggleAside from "../hooks/use-toggleAside";
-import PageHeading from "../components/page-components/PageHeading";
 import ProfileContent from "../components/page-components/media-content/ProfileContent";
 
 const ProfilePage = () => {
@@ -13,7 +12,6 @@ const ProfilePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       <Navigation />
-      <PageHeading title="Your Profile" />
       <main className="flex h-full">
         <AsidePanel
           isCollapsed={isCollapsed}

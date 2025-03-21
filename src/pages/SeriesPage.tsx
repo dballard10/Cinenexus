@@ -2,7 +2,6 @@ import ContentFilters from "@/components/filters/ContentFilters";
 import { Navigation } from "@/components/page-components/Navigation";
 import AsidePanel from "@/components/page-components/AsidePanel";
 import useToggleAside from "@/hooks/use-toggleAside";
-import PageHeading from "@/components/page-components/PageHeading";
 import SeriesContent from "@/components/page-components/media-content/SeriesContent";
 
 const SeriesPage = () => {
@@ -13,7 +12,6 @@ const SeriesPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       <Navigation />
-      <PageHeading title="Series" />
       <main className="flex h-full">
         <AsidePanel
           isCollapsed={isCollapsed}
