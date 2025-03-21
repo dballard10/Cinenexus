@@ -18,7 +18,7 @@ const SeriesPage = () => {
           toggleCollapse={toggleCollapse}
           title="Filters"
         >
-          <ContentFilters />
+          <ContentFilters media_type="tv" />
         </AsidePanel>
         <div className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4">

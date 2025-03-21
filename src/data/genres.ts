@@ -1,13 +1,7 @@
-export const genres = [
+export const tv_genres = [
   {
-    id: 28,
-    name: "Action",
-    show_name: "Action & Adventure",
-  },
-  {
-    id: 12,
-    name: "Adventure",
-    show_name: "Action & Adventure",
+    id: 10759,
+    name: "Action & Adventure",
   },
   {
     id: 16,
@@ -38,23 +32,6 @@ export const genres = [
     name: "Kids",
   },
   {
-    id: 14,
-    name: "Fantasy",
-    show_name: "Sci-Fi & Fantasy",
-  },
-  {
-    id: 36,
-    name: "History",
-  },
-  {
-    id: 27,
-    name: "Horror",
-  },
-  {
-    id: 10402,
-    name: "Music",
-  },
-  {
     id: 9648,
     name: "Mystery",
   },
@@ -67,14 +44,8 @@ export const genres = [
     name: "Reality",
   },
   {
-    id: 10749,
-    name: "Romance",
-    show_name: null,
-  },
-  {
-    id: 878,
-    name: "Science Fiction",
-    show_name: "Sci-Fi & Fantasy",
+    id: 10765,
+    name: "Sci-Fi & Fantasy",
   },
   {
     id: 10766,
@@ -85,17 +56,8 @@ export const genres = [
     name: "Talk",
   },
   {
-    id: 53,
-    name: "Thriller",
-  },
-  {
-    id: 10770,
-    name: "TV Movie",
-  },
-  {
     id: 10768,
-    name: "War",
-    show_name: "War & Politics",
+    name: "War & Politics",
   },
   {
     id: 37,
@@ -155,6 +117,10 @@ export const movie_genres = [
   {
     id: 9648,
     name: "Mystery",
+  },
+  {
+    id: 10749,
+    name: "Romance",
   },
   {
     id: 878,
