@@ -1,13 +1,11 @@
-import React from "react";
 import SortBy from "./SortBy";
+import { sortBy } from "@/data/sortby";
 
 const SortList = () => {
-  const options = ["Alphabetical", "Recent", "Rating"];
-
   return (
     <div className="flex flex-col gap-2">
-      {options.map((option) => (
-        <SortBy key={option} name={option} />
+      {sortBy.map((option) => (
+        <SortBy id={option.id} name={option.name} />
       ))}
     </div>
   );

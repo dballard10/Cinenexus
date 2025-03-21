@@ -22,7 +22,7 @@ const usePopular = () => {
           (item: any): Media => ({
             id: item.id,
             name: item.name || item.title,
-            poster_path: item.poster_path,
+            backdrop_path: item.backdrop_path,
             vote_average: item.vote_average,
             media_type: item.media_type,
           })

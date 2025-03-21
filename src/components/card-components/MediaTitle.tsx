@@ -20,7 +20,7 @@ const MediaTitle = ({
       to={`/media/${name.toLowerCase().replace(/ /g, "-")}`}
       state={{ id: id.toString(), mediaType: media_type }}
       onClick={handleCardClick}
-      className="text-xl font-semibold text-white cursor-pointer transition-transform hover:scale-105"
+      className="text-md font-semibold text-white cursor-pointer transition-transform hover:scale-105"
     >
       {name}
     </Link>

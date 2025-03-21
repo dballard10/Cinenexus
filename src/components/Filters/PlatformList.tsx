@@ -1,25 +1,11 @@
-import React, { useState } from "react";
+import { platforms } from "@/data/platforms";
 import Platform from "./Platform";
 
 const PlatformList = () => {
-  const platforms = [
-    "Netflix",
-    "Hulu",
-    "Amazon Prime",
-    "Disney+",
-    "HBO Max",
-    "Apple TV+",
-    "Peacock",
-    "Paramount+",
-    "Showtime",
-    "Starz",
-    "Crunchyroll",
-  ];
-
   return (
     <div className="flex flex-col gap-2">
       {platforms.map((platform) => (
-        <Platform key={platform} name={platform} />
+        <Platform id={platform.provider_id} name={platform.provider_name} />
       ))}
     </div>
   );

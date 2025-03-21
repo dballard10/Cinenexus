@@ -9,7 +9,7 @@ import useMediaDetails from "@/hooks/use-media-details";
 interface CardProps {
   id: number;
   name: string;
-  poster_path: string;
+  backdrop_path: string;
   vote_average: number;
   media_type: string;
 }
@@ -17,7 +17,7 @@ interface CardProps {
 const Card = ({
   id,
   name,
-  poster_path,
+  backdrop_path,
   vote_average,
   media_type: rawMediaType,
 }: CardProps) => {
@@ -31,7 +31,6 @@ const Card = ({
 
   const handleCardClick = () => {
     if (!isLoading && !error && showData) {
-      console.log("Show clicked:", showData);
       setSelectedShow(showData as any);
     }
   };
@@ -39,25 +38,26 @@ const Card = ({
   return (
     <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg hover:scale-105 transition-all duration-300 overflow-hidden">
       <CardImage
-        poster_path={poster_path}
+        backdrop_path={backdrop_path}
         name={name}
         id={id}
         media_type={media_type}
         handleCardClick={handleCardClick}
       />
-      <div className="p-6">
-        <div className="flex flex-row items-center justify-between mb-2">
-          <div className="flex flex-col">
+      <div className="p-2">
+        <div className="flex flex-row justify-between mb-2">
+          <div className="flex flex-col gap-1">
             <MediaTitle
               name={name}
               id={id}
               media_type={media_type}
               handleCardClick={handleCardClick}
             />
-            <MediaType media_type={media_type} />
+            <div className="flex flex-row gap-4">
+              <MediaType media_type={media_type} />
+            </div>
           </div>
-          <div className="flex flex-row gap-2">
-            <Rating rating={vote_average} />
+          <div className="flex flex-row gap-1">
             <FavoritesButton showId={id} />
           </div>
         </div>
