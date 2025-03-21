@@ -28,7 +28,7 @@ const FavoritesButton = ({
       whileTap={{ scale: 0.9 }}
       onClick={handleClick}
       className={cn(
-        "transition-all duration-300 p-2 rounded-full",
+        "transition-all duration-300 p-3 rounded-full",
         "hover:bg-yellow-500/20",
         "group"
       )}
