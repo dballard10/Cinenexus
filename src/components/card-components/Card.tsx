@@ -4,7 +4,7 @@ import MediaTitle from "./MediaTitle";
 import CardImage from "./CardImage";
 import useShowStore from "@/hooks/use-media-store";
 import MediaType from "./MediaType";
-import useMediaDetails from "@/hooks/use-media-details";
+import useMediaDetails from "@/hooks/media-details/use-media-details";
 
 interface CardProps {
   id: number;

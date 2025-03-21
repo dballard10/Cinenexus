@@ -1,4 +1,4 @@
-import useVideos from "@/hooks/use-videos";
+import useVideos from "@/hooks/media-details/use-videos";
 
 interface MediaTrailerProps {
   title: string;

@@ -1,4 +1,4 @@
-import useImages from "@/hooks/use-images";
+import useImages from "@/hooks/media-details/use-images";
 
 interface ShowImagesProps {
   title: string;
