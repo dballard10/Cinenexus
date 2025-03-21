@@ -8,7 +8,7 @@ import GenreList from "./GenreList";
 import SortList from "./SortList";
 import PlatformList from "./PlatformList";
 
-const ContentFilters = () => {
+const ContentFilters = ({ media_type }: { media_type: string }) => {
   return (
     <AccordionMultiple type="multiple" className="w-full">
       <AccordionItem value="genres">
@@ -16,7 +16,7 @@ const ContentFilters = () => {
           Genres
         </AccordionTrigger>
         <AccordionContent>
-          <GenreList />
+          <GenreList media_type={media_type} />
         </AccordionContent>
       </AccordionItem>
 
