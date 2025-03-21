@@ -13,7 +13,9 @@ const user = {
 };
 
 const navigation = [
-  { name: "Home", href: "/", current: false },
+  { name: "Discover", href: "/", current: false },
+  { name: "Movies", href: "/movies", current: false },
+  { name: "Series", href: "/series", current: false },
   { name: "Friends", href: "/friends", current: false },
   { name: "Profile", href: "/profile", current: false },
 ];
