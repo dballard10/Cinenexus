@@ -19,8 +19,8 @@ const MediaDetails = () => {
             <ReleaseDate release_date={selectedShow.release_date} />
           </div>
           <div className="flex gap-2">
-            <FavoritesButton showId={selectedShow.id} />
             <Rating rating={selectedShow.vote_average} />
+            <FavoritesButton showId={selectedShow.id} />
           </div>
         </div>
         <Overview overview={selectedShow.overview} />

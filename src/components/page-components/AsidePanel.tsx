@@ -23,7 +23,7 @@ const AsidePanel = ({
 }: AsidePanelProps) => {
   return (
     <aside
-      className={`bg-gray-900 text-white p-3 transition-all duration-300 
+      className={`bg-gray-900 text-white p-3 duration-100 
             ${isCollapsed ? "w-16" : "w-64"}`}
     >
       <CollapseButton

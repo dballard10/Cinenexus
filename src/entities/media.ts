@@ -1,7 +1,7 @@
 export interface Media {
   id: number;
   name: string;
-  poster_path: string;
+  backdrop_path: string;
   vote_average: number;
   media_type: string;
   release_date?: string;

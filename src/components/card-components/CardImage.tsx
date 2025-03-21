@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 interface CardImageProps {
-  poster_path: string;
+  backdrop_path: string;
   name: string;
   id: number;
   media_type: string;
@@ -11,15 +11,15 @@ interface CardImageProps {
 }
 
 const CardImage = ({
-  poster_path,
+  backdrop_path,
   name,
   id,
   media_type,
   handleCardClick,
 }: CardImageProps) => {
-  const fullImageUrl = poster_path.startsWith("http")
-    ? poster_path
-    : `${IMAGE_BASE_URL}${poster_path}`;
+  const fullImageUrl = backdrop_path.startsWith("http")
+    ? backdrop_path
+    : `${IMAGE_BASE_URL}${backdrop_path}`;
 
   return (
     <Link

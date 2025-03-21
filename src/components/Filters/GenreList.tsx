@@ -1,12 +1,11 @@
 import Genre from "./Genre";
+import { genres } from "@/data/genres";
 
 const GenreList = () => {
-  const genres = ["Action", "Adventure", "Animation", "Comedy", "Drama"];
-
   return (
     <div className="flex flex-col gap-2">
       {genres.map((genre) => (
-        <Genre key={genre} name={genre} />
+        <Genre id={genre.id} name={genre.name} />
       ))}
     </div>
   );

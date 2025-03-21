@@ -1,5 +1,3 @@
-import React from "react";
-
 interface CollapseButtonProps {
   title: string;
   toggleCollapse: () => void;
