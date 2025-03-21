@@ -2,14 +2,14 @@ import PopularGrid from "@/components/content-grids/discover/PopularGrid";
 import GridHeading from "@/components/content-grids/GridHeading";
 import SearchBar from "@/components/filters/SearchBar";
 
-const DiscoverContent = () => {
+const SeriesContent = () => {
   return (
     <>
       <SearchBar />
-      <GridHeading title="Trending" />
+      <GridHeading title="Series" />
       <PopularGrid />
     </>
   );
 };
 
-export default DiscoverContent;
+export default SeriesContent;

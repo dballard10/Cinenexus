@@ -1,11 +1,11 @@
-import ContentFilters from "../components/filters/ContentFilters";
-import { Navigation } from "../components/page-components/Navigation";
-import AsidePanel from "../components/page-components/AsidePanel";
-import useToggleAside from "../hooks/use-toggleAside";
-import PageHeading from "../components/page-components/PageHeading";
-import DiscoverContent from "../components/page-components/media-content/DiscoverContent";
+import ContentFilters from "@/components/filters/ContentFilters";
+import { Navigation } from "@/components/page-components/Navigation";
+import AsidePanel from "@/components/page-components/AsidePanel";
+import useToggleAside from "@/hooks/use-toggleAside";
+import PageHeading from "@/components/page-components/PageHeading";
+import SeriesContent from "@/components/page-components/media-content/SeriesContent";
 
-const HomePage = () => {
+const SeriesPage = () => {
   const { isCollapsed, toggleCollapse } = useToggleAside({
     initialState: false,
   });
@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       <Navigation />
-      <PageHeading title="Discover" />
+      <PageHeading title="Series" />
       <main className="flex h-full">
         <AsidePanel
           isCollapsed={isCollapsed}
@@ -24,7 +24,7 @@ const HomePage = () => {
         </AsidePanel>
         <div className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4">
-            <DiscoverContent />
+            <SeriesContent />
           </div>
         </div>
       </main>
@@ -32,4 +32,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default SeriesPage;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import CardGrid from "../card-components/CardGrid";
-import { Media } from "../../entities/media";
+import CardGrid from "@/components/card-components/CardGrid";
+import { Media } from "@/entities/media";
 import axios from "axios";
 
 const options = {

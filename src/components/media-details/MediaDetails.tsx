@@ -7,12 +7,13 @@ import MediaTrailer from "./Trailer";
 import Overview from "./Overview";
 import ReleaseDate from "./ReleaseDate";
 
-const MediaDetails = () => {
+const MediaDetails = ({ title }: { title: string }) => {
   const selectedShow = useShowStore((state) => state.selectedShow);
 
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
       <div className="bg-gray-900 rounded-lg p-4">
+        <h1 className="text-3xl font-bold">{title}</h1>
         <div className="flex gap-2 pb-2 justify-between">
           <div className="flex gap-4 items-center">
             <MediaType media_type={selectedShow.media_type} />
