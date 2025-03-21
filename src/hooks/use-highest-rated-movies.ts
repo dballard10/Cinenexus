@@ -17,6 +17,8 @@ const useHighestRatedMovies = () => {
     queryFn: async () => {
       const response = await axios.request(options);
 
+      console.log("Response data results:", response.data.results);
+
       if (response && response.data.results) {
         return response.data.results.map(
           (item: any): Media => ({
@@ -24,7 +26,7 @@ const useHighestRatedMovies = () => {
             name: item.name || item.title,
             backdrop_path: item.backdrop_path,
             vote_average: item.vote_average,
-            media_type: item.media_type,
+            media_type: "movie",
           })
         );
       }

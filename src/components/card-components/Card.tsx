@@ -10,7 +10,6 @@ interface CardProps {
   id: number;
   name: string;
   backdrop_path: string;
-  vote_average: number;
   media_type: string;
 }
 
@@ -18,7 +17,6 @@ const Card = ({
   id,
   name,
   backdrop_path,
-  vote_average,
   media_type: rawMediaType,
 }: CardProps) => {
   const setSelectedShow = useShowStore((state) => state.setSelectedShow);
@@ -31,6 +29,7 @@ const Card = ({
 
   const handleCardClick = () => {
     if (!isLoading && !error && showData) {
+      console.log("showData", showData);
       setSelectedShow(showData as any);
     }
   };
