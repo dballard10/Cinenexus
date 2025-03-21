@@ -1,6 +1,6 @@
 import CardGrid from "../../card-components/CardGrid";
 import { Media } from "@/entities/media";
-import useHighestRatedSeries from "@/hooks/use-highest-rated-series";
+import useHighestRatedSeries from "@/hooks/series/use-highest-rated-series";
 
 const HighestRatedSeriesGrid = () => {
   const { data: shows, isLoading, error } = useHighestRatedSeries();
