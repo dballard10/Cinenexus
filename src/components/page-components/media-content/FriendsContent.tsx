@@ -8,7 +8,7 @@ const FriendsContent = () => {
       <SearchBar />
       <GridHeading title="What your friends are watching" />
       <CurrentGrid />
-      <GridHeading title="Your friends' favorite shows" />
+      {/* <GridHeading title="Your friends' favorite shows" /> */}
     </>
   );
 };

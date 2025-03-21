@@ -1,4 +1,4 @@
-import HighestRatedGrid from "@/components/content-grids/movies/HighestRatedGrid";
+import HighestRatedMoviesGrid from "@/components/content-grids/movies/HighestRatedMoviesGrid";
 import GridHeading from "@/components/content-grids/GridHeading";
 import SearchBar from "@/components/filters/SearchBar";
 
@@ -7,7 +7,7 @@ const MovieContent = () => {
     <>
       <SearchBar />
       <GridHeading title="Highest Rated" />
-      <HighestRatedGrid />
+      <HighestRatedMoviesGrid />
     </>
   );
 };

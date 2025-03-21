@@ -8,7 +8,7 @@ const ProfileContent = () => {
       <SearchBar />
       <GridHeading title="What you've been watching" />
       <CurrentGrid />
-      <GridHeading title="Your Favorite Shows" />
+      {/* <GridHeading title="Your Favorite Shows" /> */}
     </>
   );
 };

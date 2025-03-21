@@ -2,7 +2,7 @@ import { Media } from "@/entities/media";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-const useHighestRated = () => {
+const useHighestRatedMovies = () => {
   const options = {
     method: "GET",
     url: "https://api.themoviedb.org/3/movie/top_rated?language=en-US",
@@ -34,4 +34,4 @@ const useHighestRated = () => {
   });
 };
 
-export default useHighestRated;
+export default useHighestRatedMovies;

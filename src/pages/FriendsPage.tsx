@@ -3,7 +3,6 @@ import FriendsList from "../components/friends/FriendsList";
 import ContentFilters from "../components/filters/ContentFilters";
 import AsidePanel from "../components/page-components/AsidePanel";
 import useToggleAside from "../hooks/use-toggleAside";
-import PageHeading from "../components/page-components/PageHeading";
 import FriendsContent from "../components/page-components/media-content/FriendsContent";
 
 const FriendsPage = () => {
@@ -26,7 +25,6 @@ const FriendsPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       <Navigation />
-      <PageHeading title="Friends" />
       <main className="flex h-full">
         <AsidePanel
           isCollapsed={isCollapsed}
