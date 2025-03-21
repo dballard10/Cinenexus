@@ -13,8 +13,6 @@ const MediaTitle = ({
   media_type,
   handleCardClick,
 }: MediaTitleProps) => {
-  const link = name;
-
   return (
     <Link
       to={`/media/${name.toLowerCase().replace(/ /g, "-")}`}

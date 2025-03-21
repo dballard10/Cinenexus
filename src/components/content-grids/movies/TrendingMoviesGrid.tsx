@@ -1,3 +1,4 @@
+import CardSkeletons from "@/components/skeletons/CardSkeletons";
 import CardGrid from "../../card-components/CardGrid";
 import { Media } from "@/entities/media";
 import useTrendingMovies from "@/hooks/movies/use-trending-movies";
@@ -5,7 +6,7 @@ import useTrendingMovies from "@/hooks/movies/use-trending-movies";
 const TrendingMoviesGrid = () => {
   const { data: shows, isLoading, error } = useTrendingMovies();
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <CardSkeletons />;
   if (error) return <div>Error: {(error as Error).message}</div>;
 
   return (
