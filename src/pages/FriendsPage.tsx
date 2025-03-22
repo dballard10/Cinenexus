@@ -18,7 +18,7 @@ const FriendsPage = () => {
     },
     {
       label: "Filters",
-      content: <ContentFilters media_type="movie" />,
+      content: <ContentFilters media_type="both" />,
     },
   ];
 
