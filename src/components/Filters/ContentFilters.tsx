@@ -1,5 +1,5 @@
 import {
-  AccordionMultiple,
+  Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
@@ -7,13 +7,19 @@ import {
 import GenreList from "./GenreList";
 import SortList from "./SortList";
 import PlatformList from "./PlatformList";
+import ClearFilterButton from "./ClearFilterButton";
+import useShowStore from "@/hooks/use-media-store";
 
 const ContentFilters = ({ media_type }: { media_type: string }) => {
+  const { selectedGenres } = useShowStore();
   return (
-    <AccordionMultiple type="multiple" className="w-full">
+    <Accordion type="multiple" className="w-full">
       <AccordionItem value="genres">
         <AccordionTrigger className="text-white hover:scale-105">
-          Genres
+          <div className="flex items-center justify-between gap-2">
+            <span>Genres</span>
+            {selectedGenres.names.length > 0 && <ClearFilterButton />}
+          </div>
         </AccordionTrigger>
         <AccordionContent>
           <GenreList media_type={media_type} />
@@ -37,7 +43,7 @@ const ContentFilters = ({ media_type }: { media_type: string }) => {
           <SortList />
         </AccordionContent>
       </AccordionItem>
-    </AccordionMultiple>
+    </Accordion>
   );
 };
 
