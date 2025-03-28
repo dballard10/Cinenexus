@@ -1,29 +1,33 @@
 import Genre from "./Genre";
-import { genres } from "@/data/genres";
+import useMovieGenres from "@/hooks/movies/use-movie-genres";
+import useTvGenres from "@/hooks/series/use-tv-genres";
 
 const GenreList = ({ media_type }: { media_type: string }) => {
-  // Filter genres based on media_type
-  const filteredGenres = genres.filter((genre) => {
-    if (media_type === "both") {
-      return true; // Return all genres
-    } else if (media_type === "movie") {
-      return genre.movieId !== undefined; // Return only genres with movieId
-    } else if (media_type === "tv") {
-      return genre.tvId !== undefined; // Return only genres with tvId
-    }
-    return false;
-  });
+  const {
+    data: movieGenres,
+    isLoading: movieLoading,
+    error: movieError,
+  } = useMovieGenres();
+  const {
+    data: tvGenres,
+    isLoading: tvLoading,
+    error: tvError,
+  } = useTvGenres();
 
-  console.log(filteredGenres);
+  if (movieLoading || tvLoading) return <div>Loading...</div>;
+  if (movieError || tvError) return <div>Error: {movieError?.message}</div>;
+
+  // Filter genres based on media_type
+  const selectedGenres = media_type === "movie" ? movieGenres : tvGenres;
 
   return (
     <div className="flex flex-col gap-2">
-      {filteredGenres.map((genre) => {
+      {selectedGenres?.map((genre) => {
         return (
           <Genre
             key={genre.name}
-            movieId={genre.movieId}
-            tvId={genre.tvId}
+            movieId={genre.id}
+            tvId={genre.id}
             name={genre.name}
           />
         );

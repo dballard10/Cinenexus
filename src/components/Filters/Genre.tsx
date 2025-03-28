@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useShowStore from "@/hooks/use-media-store";
 
 interface GenreProps {
   movieId: number;
@@ -7,12 +8,17 @@ interface GenreProps {
 }
 
 const Genre = ({ movieId, tvId, name }: GenreProps) => {
+  const { addSelectedGenre, removeSelectedGenre } = useShowStore();
   const [isSelected, setIsSelected] = useState(false);
 
-  const handleGenreClick = (movieId: number, tvId: number) => {
+  const handleGenreClick = () => {
     setIsSelected(!isSelected);
-    console.log(`Genre clicked: ${movieId}`);
-    console.log(`Genre clicked: ${tvId}`);
+
+    if (isSelected) {
+      removeSelectedGenre(movieId, tvId, name);
+    } else {
+      addSelectedGenre(movieId, tvId, name);
+    }
   };
 
   return (
@@ -20,7 +26,7 @@ const Genre = ({ movieId, tvId, name }: GenreProps) => {
       <button
         className={`bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-2 w-full
           ${isSelected ? "bg-white/30 font-medium" : ""}`}
-        onClick={() => handleGenreClick(movieId, tvId)}
+        onClick={() => handleGenreClick()}
       >
         {name}
       </button>

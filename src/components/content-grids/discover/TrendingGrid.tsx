@@ -1,10 +1,10 @@
 import CardSkeletons from "@/components/skeletons/CardSkeletons";
 import CardGrid from "../../card-components/CardGrid";
 import { Media } from "@/entities/media";
-import usePopular from "@/hooks/use-popular";
+import useTrendingMovies from "@/hooks/movies/use-trending-movies";
 
-const PopularGrid = () => {
-  const { data: shows, isLoading, error } = usePopular();
+const TrendingGrid = () => {
+  const { data: shows, isLoading, error } = useTrendingMovies();
 
   if (isLoading) return <CardSkeletons />;
   if (error) return <div>Error: {(error as Error).message}</div>;
@@ -16,4 +16,4 @@ const PopularGrid = () => {
   );
 };
 
-export default PopularGrid;
+export default TrendingGrid;
