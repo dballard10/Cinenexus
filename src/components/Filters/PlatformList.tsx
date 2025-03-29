@@ -5,7 +5,11 @@ const PlatformList = () => {
   return (
     <div className="flex flex-col gap-2">
       {platforms.map((platform) => (
-        <Platform id={platform.provider_id} name={platform.provider_name} />
+        <Platform
+          key={platform.provider_id}
+          id={platform.provider_id}
+          name={platform.provider_name}
+        />
       ))}
     </div>
   );
