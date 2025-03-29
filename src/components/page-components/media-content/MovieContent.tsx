@@ -1,9 +1,10 @@
-import HighestRatedMoviesGrid from "@/components/content-grids/movies/HighestRatedMoviesGrid";
 import GridHeading from "@/components/content-grids/GridHeading";
 import SearchBar from "@/components/filters/SearchBar";
-import TrendingMoviesGrid from "@/components/content-grids/movies/TrendingMoviesGrid";
-import useShowStore from "@/hooks/use-media-store";
 import FilteredMediaGrid from "@/components/content-grids/FilteredMediaGrid";
+import MediaGrid from "@/components/content-grids/MediaGrid";
+import useTrendingMovies from "@/hooks/movies/use-trending-movies";
+import useHighestRatedMovies from "@/hooks/movies/use-highest-rated-movies";
+import useShowStore from "@/hooks/use-media-store";
 
 const MovieContent = () => {
   const { selectedGenres, selectedPlatforms, selectedSort } = useShowStore();
@@ -20,10 +21,10 @@ const MovieContent = () => {
         </>
       ) : (
         <>
-          <GridHeading title="Trending" />
-          <TrendingMoviesGrid />
-          <GridHeading title="Highest Rated" />
-          <HighestRatedMoviesGrid />
+          <GridHeading title="Trending Movies" />
+          <MediaGrid useMediaHook={useTrendingMovies} />
+          <GridHeading title="Highest Rated Movies" />
+          <MediaGrid useMediaHook={useHighestRatedMovies} />
         </>
       )}
     </>

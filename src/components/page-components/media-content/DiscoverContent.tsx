@@ -1,7 +1,8 @@
-import TrendingGrid from "@/components/content-grids/discover/TrendingGrid";
 import FilteredMediaGrid from "@/components/content-grids/FilteredMediaGrid";
 import GridHeading from "@/components/content-grids/GridHeading";
+import MediaGrid from "@/components/content-grids/MediaGrid";
 import SearchBar from "@/components/filters/SearchBar";
+import useTrendingMovies from "@/hooks/movies/use-trending-movies";
 import useShowStore from "@/hooks/use-media-store";
 
 const DiscoverContent = () => {
@@ -21,7 +22,7 @@ const DiscoverContent = () => {
       ) : (
         <>
           <GridHeading title="Trending" />
-          <TrendingGrid />
+          <MediaGrid useMediaHook={useTrendingMovies} />
         </>
       )}
     </>

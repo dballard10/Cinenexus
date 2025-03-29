@@ -1,9 +1,10 @@
-import HighestRatedSeriesGrid from "@/components/content-grids/series/HighestRatedSeriesGrid";
 import GridHeading from "@/components/content-grids/GridHeading";
 import SearchBar from "@/components/filters/SearchBar";
-import TrendingSeriesGrid from "@/components/content-grids/series/TrendingSeriesGrid";
-import useShowStore from "@/hooks/use-media-store";
 import FilteredMediaGrid from "@/components/content-grids/FilteredMediaGrid";
+import MediaGrid from "@/components/content-grids/MediaGrid";
+import useShowStore from "@/hooks/use-media-store";
+import useTrendingSeries from "@/hooks/series/use-trending-series";
+import useHighestRatedSeries from "@/hooks/series/use-highest-rated-series";
 
 const SeriesContent = () => {
   const { selectedGenres, selectedPlatforms, selectedSort } = useShowStore();
@@ -20,10 +21,10 @@ const SeriesContent = () => {
         </>
       ) : (
         <>
-          <GridHeading title="Trending" />
-          <TrendingSeriesGrid />
-          <GridHeading title="Top Rated" />
-          <HighestRatedSeriesGrid />
+          <GridHeading title="Trending Series" />
+          <MediaGrid useMediaHook={useTrendingSeries} />
+          <GridHeading title="Highest Rated Series" />
+          <MediaGrid useMediaHook={useHighestRatedSeries} />
         </>
       )}
     </>
