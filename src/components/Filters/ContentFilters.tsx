@@ -11,14 +11,16 @@ import ClearFilterButton from "./ClearFilterButton";
 import useShowStore from "@/hooks/use-media-store";
 
 const ContentFilters = ({ media_type }: { media_type: string }) => {
-  const { selectedGenres } = useShowStore();
+  const { selectedGenres, selectedPlatforms, selectedSort } = useShowStore();
   return (
     <Accordion type="multiple" className="w-full">
       <AccordionItem value="genres">
         <AccordionTrigger className="text-white hover:scale-105">
           <div className="flex items-center justify-between gap-2">
             <span>Genres</span>
-            {selectedGenres.names.length > 0 && <ClearFilterButton />}
+            {selectedGenres.names.length > 0 && (
+              <ClearFilterButton filter="genres" />
+            )}
           </div>
         </AccordionTrigger>
         <AccordionContent>
@@ -28,7 +30,12 @@ const ContentFilters = ({ media_type }: { media_type: string }) => {
 
       <AccordionItem value="platforms">
         <AccordionTrigger className="text-white hover:scale-105 no-underline">
-          Platforms
+          <div className="flex items-center justify-between gap-2">
+            <span>Platforms</span>
+            {selectedPlatforms.platformIds.length > 0 && (
+              <ClearFilterButton filter="platforms" />
+            )}
+          </div>
         </AccordionTrigger>
         <AccordionContent>
           <PlatformList />
@@ -37,7 +44,10 @@ const ContentFilters = ({ media_type }: { media_type: string }) => {
 
       <AccordionItem value="sort">
         <AccordionTrigger className="text-white hover:scale-105 no-underline">
-          Sort By
+          <div className="flex items-center justify-between gap-2">
+            <span>Sort By</span>
+            {selectedSort.id_desc !== "" && <ClearFilterButton filter="sort" />}
+          </div>
         </AccordionTrigger>
         <AccordionContent>
           <SortList />

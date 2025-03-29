@@ -1,6 +1,7 @@
 import Genre from "./Genre";
 import useMovieGenres from "@/hooks/movies/use-movie-genres";
 import useTvGenres from "@/hooks/series/use-tv-genres";
+import LoadingIcon from "./LoadingIcon";
 
 const GenreList = ({ media_type }: { media_type: string }) => {
   const {
@@ -14,7 +15,7 @@ const GenreList = ({ media_type }: { media_type: string }) => {
     error: tvError,
   } = useTvGenres();
 
-  if (movieLoading || tvLoading) return <div>Loading...</div>;
+  if (movieLoading || tvLoading) return <LoadingIcon />;
   if (movieError || tvError) return <div>Error: {movieError?.message}</div>;
 
   // Filter genres based on media_type
