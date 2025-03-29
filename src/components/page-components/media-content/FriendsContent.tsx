@@ -1,13 +1,14 @@
 import GridHeading from "@/components/content-grids/GridHeading";
 import SearchBar from "@/components/filters/SearchBar";
-import TrendingGrid from "@/components/content-grids/discover/TrendingGrid";
+import MediaGrid from "@/components/content-grids/MediaGrid";
+import useTrendingMovies from "@/hooks/movies/use-trending-movies";
 
 const FriendsContent = () => {
   return (
     <>
       <SearchBar />
       <GridHeading title="What your friends are watching" />
-      <TrendingGrid />
+      <MediaGrid useMediaHook={useTrendingMovies} />
     </>
   );
 };
