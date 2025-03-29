@@ -1,7 +1,7 @@
 import ContentFilters from "../components/filters/ContentFilters";
 import { Navigation } from "../components/page-components/Navigation";
 import AsidePanel from "../components/page-components/AsidePanel";
-import useToggleAside from "../hooks/use-toggleAside";
+import useToggleAside from "../hooks/screen/use-toggleAside";
 import ProfileContent from "../components/page-components/media-content/ProfileContent";
 
 const ProfilePage = () => {

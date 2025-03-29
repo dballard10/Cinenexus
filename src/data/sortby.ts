@@ -1,22 +1,22 @@
 export const sortBy = [
   {
-    id: 1,
+    id_asc: "popularity.asc",
+    id_desc: "popularity.desc",
+    name: "Popularity",
+  },
+  {
+    id_asc: "name.asc",
+    id_desc: "name.desc",
     name: "Alphabetical",
   },
   {
-    id: 2,
+    id_asc: "first_air_date.asc",
+    id_desc: "first_air_date.desc",
     name: "Recent",
   },
   {
-    id: 3,
+    id_asc: "vote_count.asc",
+    id_desc: "vote_count.desc",
     name: "Rating",
-  },
-  {
-    id: 4,
-    name: "Movie",
-  },
-  {
-    id: 5,
-    name: "Series",
   },
 ];

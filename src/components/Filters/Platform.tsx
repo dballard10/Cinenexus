@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useShowStore from "@/hooks/use-media-store";
 
 interface PlatformProps {
   id: number;
@@ -6,11 +7,17 @@ interface PlatformProps {
 }
 
 const Platform = ({ id, name }: PlatformProps) => {
+  const { addSelectedPlatform, removeSelectedPlatform } = useShowStore();
   const [isSelected, setIsSelected] = useState(false);
 
-  const handleClick = (id: number) => {
+  const handleClick = () => {
     setIsSelected(!isSelected);
-    console.log(`Platform clicked: ${id}`);
+
+    if (isSelected) {
+      removeSelectedPlatform(id, name);
+    } else {
+      addSelectedPlatform(id, name);
+    }
   };
 
   return (
@@ -18,7 +25,7 @@ const Platform = ({ id, name }: PlatformProps) => {
       <button
         className={`bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-2 w-full
           ${isSelected ? "bg-white/30 font-medium" : ""}`}
-        onClick={() => handleClick(id)}
+        onClick={() => handleClick()}
       >
         {name}
       </button>

@@ -22,11 +22,26 @@ interface ShowState {
     tvIds: number[];
     names: string[];
   };
+  selectedPlatforms: {
+    platformIds: number[];
+    platformNames: string[];
+  };
+  selectedSort: {
+    id_asc: string;
+    id_desc: string;
+    name: string;
+  };
   setSelectedShow: (show: ShowState["selectedShow"]) => void;
   clearSelectedShow: () => void;
   addSelectedGenre: (movieId: number, tvId: number, name: string) => void;
   removeSelectedGenre: (movieId: number, tvId: number, name: string) => void;
   clearSelectedGenres: () => void;
+  addSelectedPlatform: (platform: number, name: string) => void;
+  removeSelectedPlatform: (platform: number, name: string) => void;
+  clearSelectedPlatforms: () => void;
+  addSelectedSort: (id_asc: string, id_desc: string, name: string) => void;
+  removeSelectedSort: (id_asc: string, id_desc: string, name: string) => void;
+  clearSelectedSort: () => void;
 }
 
 const useShowStore = create<ShowState>()((set) => ({
@@ -49,6 +64,15 @@ const useShowStore = create<ShowState>()((set) => ({
     movieIds: [],
     tvIds: [],
     names: [],
+  },
+  selectedPlatforms: {
+    platformIds: [],
+    platformNames: [],
+  },
+  selectedSort: {
+    id_asc: "",
+    id_desc: "",
+    name: "",
   },
   setSelectedShow: (show) => set({ selectedShow: show }),
   clearSelectedShow: () =>
@@ -96,6 +120,44 @@ const useShowStore = create<ShowState>()((set) => ({
   clearSelectedGenres: () =>
     set({
       selectedGenres: { movieIds: [], tvIds: [], names: [] },
+    }),
+  addSelectedPlatform: (platform, name) =>
+    set((state) => ({
+      selectedPlatforms: {
+        ...state.selectedPlatforms,
+        platformIds: [...state.selectedPlatforms.platformIds, platform],
+        platformNames: [...state.selectedPlatforms.platformNames, name],
+      },
+    })),
+  removeSelectedPlatform: (platform) =>
+    set((state) => ({
+      selectedPlatforms: {
+        ...state.selectedPlatforms,
+        platformIds: state.selectedPlatforms.platformIds.filter(
+          (p) => p !== platform
+        ),
+      },
+    })),
+  clearSelectedPlatforms: () =>
+    set({
+      selectedPlatforms: { platformIds: [], platformNames: [] },
+    }),
+  addSelectedSort: (id_asc, id_desc, name) =>
+    set((state) => ({
+      selectedSort: { ...state.selectedSort, id_asc, id_desc, name },
+    })),
+  removeSelectedSort: (id_asc, id_desc, name) =>
+    set((state) => ({
+      selectedSort: {
+        ...state.selectedSort,
+        id_asc: state.selectedSort.id_asc !== id_asc ? id_asc : "",
+        id_desc: state.selectedSort.id_desc !== id_desc ? id_desc : "",
+        name: state.selectedSort.name !== name ? name : "",
+      },
+    })),
+  clearSelectedSort: () =>
+    set({
+      selectedSort: { id_asc: "", id_desc: "", name: "" },
     }),
 }));
 
