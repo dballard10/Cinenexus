@@ -1,9 +1,9 @@
-import { Navigation } from "../components/page-components/Navigation";
-import FriendsList from "../components/friends/FriendsList";
-import ContentFilters from "../components/filters/ContentFilters";
-import AsidePanel from "../components/page-components/AsidePanel";
-import useToggleAside from "../hooks/screen/use-toggleAside";
-import FriendsContent from "../components/page-components/media-content/FriendsContent";
+import { Navigation } from "@/components/page-components/Navigation";
+import FriendsList from "@/components/friends/FriendsList";
+import ContentFilters from "@/components/filters/ContentFilters";
+import AsidePanel from "@/components/page-components/AsidePanel";
+import useToggleAside from "@/hooks/screen/use-toggleAside";
+import FriendsContent from "@/components/page-components/media-content/FriendsContent";
 
 const FriendsPage = () => {
   const { isCollapsed, toggleCollapse } = useToggleAside({
