@@ -1,14 +1,13 @@
-import CurrentGrid from "@/components/content-grids/CurrentGrid";
 import GridHeading from "@/components/content-grids/GridHeading";
 import SearchBar from "@/components/filters/SearchBar";
+import TrendingGrid from "@/components/content-grids/discover/TrendingGrid";
 
 const ProfileContent = () => {
   return (
     <>
       <SearchBar />
       <GridHeading title="What you've been watching" />
-      <CurrentGrid />
-      {/* <GridHeading title="Your Favorite Shows" /> */}
+      <TrendingGrid />
     </>
   );
 };
