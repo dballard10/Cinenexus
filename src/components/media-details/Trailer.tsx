@@ -25,7 +25,6 @@ const MediaTrailer = ({ title, id, media_type }: MediaTrailerProps) => {
         className="w-full h-full rounded-lg"
         src={`https://www.youtube-nocookie.com/embed/${trailer.key}`}
         title={`${title} Trailer`}
-        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       ></iframe>

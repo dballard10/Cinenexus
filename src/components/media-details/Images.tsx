@@ -1,5 +1,4 @@
 import useImages from "@/hooks/media-details/use-images";
-
 interface ShowImagesProps {
   title: string;
   id: number;
@@ -10,9 +9,6 @@ const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 const ShowImages = ({ title, id, media_type }: ShowImagesProps) => {
   const { data: images } = useImages(id, media_type);
-
-  console.log(images);
-  console.log(title);
 
   return (
     <div className="grid grid-cols-2 gap-3">
