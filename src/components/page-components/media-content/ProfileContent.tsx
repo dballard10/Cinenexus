@@ -1,7 +1,7 @@
-import GridHeading from "@/components/content-grids/GridHeading";
+import GridHeading from "@/components/media-grids/GridHeading";
 import SearchBar from "@/components/filters/SearchBar";
 import useTrendingMovies from "@/hooks/movies/use-trending-movies";
-import MediaGrid from "@/components/content-grids/MediaGrid";
+import MediaGrid from "@/components/media-grids/MediaGrid";
 
 const ProfileContent = () => {
   return (
