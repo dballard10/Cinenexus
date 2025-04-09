@@ -1,4 +1,4 @@
-import useShowStore from "@/hooks/use-media-store";
+import useMediaStore from "@/hooks/use-media-store";
 
 interface GenreProps {
   movieId: number;
@@ -8,7 +8,7 @@ interface GenreProps {
 
 const Genre = ({ movieId, tvId, name }: GenreProps) => {
   const { addSelectedGenre, removeSelectedGenre, selectedGenres } =
-    useShowStore();
+    useMediaStore();
 
   const isSelected = selectedGenres.names.includes(name);
 

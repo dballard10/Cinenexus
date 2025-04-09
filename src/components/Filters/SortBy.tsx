@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useShowStore from "@/hooks/use-media-store";
+import useMediaStore from "@/hooks/use-media-store";
 
 interface SortByProps {
   id_asc: string;
@@ -8,7 +8,7 @@ interface SortByProps {
 }
 
 const SortBy = ({ id_asc, id_desc, name }: SortByProps) => {
-  const { addSelectedSort, removeSelectedSort } = useShowStore();
+  const { addSelectedSort, removeSelectedSort } = useMediaStore();
   const [isSelected, setIsSelected] = useState(false);
 
   const handleClick = () => {

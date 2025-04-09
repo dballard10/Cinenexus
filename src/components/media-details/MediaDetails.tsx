@@ -1,14 +1,16 @@
-import useShowStore from "@/hooks/use-media-store";
-import Rating from "../card-components/Rating";
+import useMediaStore from "@/hooks/use-media-store";
+import Rating from "./Rating";
 import FavoritesButton from "../card-components/FavoritesButton";
 import MediaImages from "./Images";
 import MediaType from "../card-components/MediaType";
 import MediaTrailer from "./Trailer";
 import Overview from "./Overview";
 import ReleaseDate from "./ReleaseDate";
+import MediaGenres from "./MediaGenres";
+import MediaProductionCompanies from "./MediaProductionCompanies";
 
 const MediaDetails = ({ title }: { title: string }) => {
-  const selectedShow = useShowStore((state) => state.selectedShow);
+  const selectedShow = useMediaStore((state) => state.selectedShow);
 
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 h-full">
@@ -25,15 +27,19 @@ const MediaDetails = ({ title }: { title: string }) => {
           </div>
         </div>
         <Overview overview={selectedShow.overview} />
-      </div>
-      <div className="bg-gray-900 rounded-lg p-4 flex flex-col gap-4 max-h-full overflow-y-auto">
-        <div className="pb-4">
-          <MediaTrailer
-            id={selectedShow.id}
-            media_type={selectedShow.media_type}
-            title={selectedShow.name}
+        <div className="rounded-lg grid grid-cols-2 pt-6">
+          <MediaGenres genres={selectedShow.genres} />
+          <MediaProductionCompanies
+            production_companies={selectedShow.production_companies}
           />
         </div>
+      </div>
+      <div className="bg-gray-900 rounded-lg p-4 flex flex-col gap-4 max-h-full overflow-y-auto">
+        <MediaTrailer
+          id={selectedShow.id}
+          media_type={selectedShow.media_type}
+          title={selectedShow.name}
+        />
         <MediaImages
           id={selectedShow.id}
           media_type={selectedShow.media_type}

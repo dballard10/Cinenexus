@@ -13,11 +13,7 @@ const ProfilePage = () => {
     <div className="h-screen flex flex-col bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">
       <Navigation />
       <main className="flex flex-1 overflow-hidden">
-        <AsidePanel
-          isCollapsed={isCollapsed}
-          toggleCollapse={toggleCollapse}
-          title="Filters"
-        >
+        <AsidePanel isCollapsed={isCollapsed} toggleCollapse={toggleCollapse}>
           <ContentFilters media_type="both" />
         </AsidePanel>
         <div className="flex-1 px-4 py-6 sm:px-6 lg:px-8 overflow-y-auto">

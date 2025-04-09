@@ -8,10 +8,10 @@ import GenreList from "./GenreList";
 import SortList from "./SortList";
 import PlatformList from "./PlatformList";
 import ClearFilterButton from "./ClearFilterButton";
-import useShowStore from "@/hooks/use-media-store";
+import useMediaStore from "@/hooks/use-media-store";
 
 const ContentFilters = ({ media_type }: { media_type: string }) => {
-  const { selectedGenres, selectedPlatforms, selectedSort } = useShowStore();
+  const { selectedGenres, selectedPlatforms, selectedSort } = useMediaStore();
   return (
     <Accordion type="multiple" className="w-full">
       <AccordionItem value="genres">

@@ -1,8 +1,8 @@
-import Rating from "./Rating";
+import Rating from "../media-details/Rating";
 import FavoritesButton from "./FavoritesButton";
 import MediaTitle from "./MediaTitle";
 import CardImage from "./CardImage";
-import useShowStore from "@/hooks/use-media-store";
+import useMediaStore from "@/hooks/use-media-store";
 import MediaType from "./MediaType";
 import useMediaDetails from "@/hooks/media-details/use-media-details";
 
@@ -19,7 +19,7 @@ const Card = ({
   backdrop_path,
   media_type: rawMediaType,
 }: CardProps) => {
-  const setSelectedShow = useShowStore((state) => state.setSelectedShow);
+  const setSelectedShow = useMediaStore((state) => state.setSelectedShow);
 
   const media_type = ["tv", "movie"].includes(rawMediaType)
     ? (rawMediaType as "tv" | "movie")
