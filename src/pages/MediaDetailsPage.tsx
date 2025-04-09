@@ -1,9 +1,9 @@
 import { Navigation } from "@/components/page-components/Navigation";
 import MediaDetails from "@/components/media-details/MediaDetails";
-import useShowStore from "@/hooks/use-media-store";
+import useMediaStore from "@/hooks/use-media-store";
 
 const MediaDetailsPage = () => {
-  const selectedShow = useShowStore((state) => state.selectedShow);
+  const selectedShow = useMediaStore((state) => state.selectedShow);
 
   return (
     <div className="h-screen flex flex-col bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">

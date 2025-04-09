@@ -1,7 +1,7 @@
 import { create } from "zustand";
 // import { persist } from "zustand/middleware";
 
-interface ShowState {
+interface MediaState {
   selectedShow: {
     id: number;
     name: string;
@@ -31,7 +31,7 @@ interface ShowState {
     id_desc: string;
     name: string;
   };
-  setSelectedShow: (show: ShowState["selectedShow"]) => void;
+  setSelectedShow: (show: MediaState["selectedShow"]) => void;
   clearSelectedShow: () => void;
   addSelectedGenre: (movieId: number, tvId: number, name: string) => void;
   removeSelectedGenre: (movieId: number, tvId: number, name: string) => void;
@@ -44,7 +44,7 @@ interface ShowState {
   clearSelectedSort: () => void;
 }
 
-const useShowStore = create<ShowState>()((set) => ({
+const useMediaStore = create<MediaState>()((set) => ({
   selectedShow: {
     id: 0,
     name: "",
@@ -163,4 +163,4 @@ const useShowStore = create<ShowState>()((set) => ({
     }),
 }));
 
-export default useShowStore;
+export default useMediaStore;

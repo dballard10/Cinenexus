@@ -149,12 +149,12 @@ export const unified_genres = [
     movieId: 28,
     tvId: 10759,
     name: "Action",
-  }, // “Action” vs “Action & Adventure”
+  },
   {
     movieId: 12,
     tvId: 12,
     name: "Adventure",
-  }, // Movies only
+  },
   {
     movieId: 16,
     tvId: 16,
@@ -187,20 +187,21 @@ export const unified_genres = [
   },
   {
     movieId: 14,
+    tvId: 10765,
     name: "Fantasy",
-  }, // Movies only
+  },
   {
     movieId: 36,
     name: "History",
-  }, // Movies only
+  },
   {
     tvId: 27,
     name: "Horror",
-  }, // Movies only
+  },
   {
     movieId: 10402,
     name: "Music",
-  }, // Movies only
+  },
   {
     tvId: 9648,
     name: "Mystery",
@@ -208,23 +209,25 @@ export const unified_genres = [
   {
     movieId: 10749,
     name: "Romance",
-  }, // Movies only
+  },
   {
     movieId: 878,
-    name: "Science Fiction",
-  }, // Movies only
+    tvId: 10765,
+    name: "Sci-Fi",
+  },
   {
     movieId: 10770,
     name: "TV Movie",
-  }, // Movies only
+  },
   {
     movieId: 53,
     name: "Thriller",
-  }, // Movies only
+  },
   {
     movieId: 10752,
-    name: "War",
-  }, // Movies only
+    tvId: 10768,
+    name: "War & Politics",
+  },
   {
     movieId: 37,
     name: "Western",
@@ -242,19 +245,11 @@ export const unified_genres = [
     name: "Reality",
   },
   {
-    tvId: 10765,
-    name: "Sci-Fi & Fantasy",
-  },
-  {
     tvId: 10766,
     name: "Soap",
   },
   {
     tvId: 10767,
     name: "Talk",
-  },
-  {
-    tvId: 10768,
-    name: "War & Politics",
   },
 ];

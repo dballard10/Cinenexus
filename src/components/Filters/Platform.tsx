@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useShowStore from "@/hooks/use-media-store";
+import useMediaStore from "@/hooks/use-media-store";
 
 interface PlatformProps {
   id: number;
@@ -7,7 +7,7 @@ interface PlatformProps {
 }
 
 const Platform = ({ id, name }: PlatformProps) => {
-  const { addSelectedPlatform, removeSelectedPlatform } = useShowStore();
+  const { addSelectedPlatform, removeSelectedPlatform } = useMediaStore();
   const [isSelected, setIsSelected] = useState(false);
 
   const handleClick = () => {

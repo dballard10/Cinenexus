@@ -1,4 +1,4 @@
-import useShowStore from "@/hooks/use-media-store";
+import useMediaStore from "@/hooks/use-media-store";
 import CardGrid from "../card-components/CardGrid";
 import { Media } from "@/entities/media";
 import CardSkeletons from "../skeletons/CardSkeletons";
@@ -10,7 +10,7 @@ interface FilteredMediaGridProps {
 }
 
 const FilteredMediaGrid = ({ media_type }: FilteredMediaGridProps) => {
-  const { selectedGenres, selectedPlatforms, selectedSort } = useShowStore();
+  const { selectedGenres, selectedPlatforms, selectedSort } = useMediaStore();
 
   const genres =
     media_type === "tv"
