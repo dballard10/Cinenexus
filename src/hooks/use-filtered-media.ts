@@ -26,6 +26,8 @@ const useFilteredMedia = (
     },
   };
 
+  console.log("API URL: ", options.url);
+
   return useQuery({
     queryKey: ["filtered-media", genre_list, platform_list, sort_by],
     queryFn: async () => {

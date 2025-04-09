@@ -6,10 +6,10 @@ const MediaDetailsPage = () => {
   const selectedShow = useShowStore((state) => state.selectedShow);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+    <div className="h-screen flex flex-col bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">
       <Navigation />
-      <main className="flex h-full">
-        <div className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
+      <main className="flex-1 overflow-hidden">
+        <div className="h-full px-4 py-6 sm:px-6 lg:px-8 overflow-y-auto">
           <MediaDetails title={selectedShow?.name} />
         </div>
       </main>
