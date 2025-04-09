@@ -97,12 +97,14 @@ const useShowStore = create<ShowState>()((set) => ({
     set((state) => ({
       selectedGenres: {
         ...state.selectedGenres,
-        movieIds: movieId
-          ? [...state.selectedGenres.movieIds, movieId]
-          : state.selectedGenres.movieIds,
-        tvIds: tvId
-          ? [...state.selectedGenres.tvIds, tvId]
-          : state.selectedGenres.tvIds,
+        movieIds:
+          movieId && movieId > 0
+            ? [...state.selectedGenres.movieIds, movieId]
+            : state.selectedGenres.movieIds,
+        tvIds:
+          tvId && tvId > 0
+            ? [...state.selectedGenres.tvIds, tvId]
+            : state.selectedGenres.tvIds,
         names: [...state.selectedGenres.names, name],
       },
     })),

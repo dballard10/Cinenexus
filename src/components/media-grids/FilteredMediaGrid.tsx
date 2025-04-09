@@ -3,6 +3,7 @@ import CardGrid from "../card-components/CardGrid";
 import { Media } from "@/entities/media";
 import CardSkeletons from "../skeletons/CardSkeletons";
 import useFilteredMedia from "@/hooks/use-filtered-media";
+import { useEffect } from "react";
 
 interface FilteredMediaGridProps {
   media_type: string;
@@ -15,6 +16,11 @@ const FilteredMediaGrid = ({ media_type }: FilteredMediaGridProps) => {
     media_type === "tv"
       ? selectedGenres.tvIds.join("|")
       : selectedGenres.movieIds.join("|");
+
+  useEffect(() => {
+    console.log("FilteredMediaGrid - genres updated:", genres);
+    console.log("FilteredMediaGrid - selectedGenres:", selectedGenres);
+  }, [genres, selectedGenres]);
 
   const {
     data: media,
