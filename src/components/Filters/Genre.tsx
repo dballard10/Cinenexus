@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useShowStore from "@/hooks/use-media-store";
 
 interface GenreProps {
@@ -8,12 +7,12 @@ interface GenreProps {
 }
 
 const Genre = ({ movieId, tvId, name }: GenreProps) => {
-  const { addSelectedGenre, removeSelectedGenre } = useShowStore();
-  const [isSelected, setIsSelected] = useState(false);
+  const { addSelectedGenre, removeSelectedGenre, selectedGenres } =
+    useShowStore();
+
+  const isSelected = selectedGenres.names.includes(name);
 
   const handleGenreClick = () => {
-    setIsSelected(!isSelected);
-
     if (isSelected) {
       removeSelectedGenre(movieId, tvId, name);
     } else {

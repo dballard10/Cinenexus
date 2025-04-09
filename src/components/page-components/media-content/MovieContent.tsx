@@ -9,12 +9,15 @@ import useShowStore from "@/hooks/use-media-store";
 const MovieContent = () => {
   const { selectedGenres, selectedPlatforms, selectedSort } = useShowStore();
 
+  const shouldShowFiltered =
+    selectedGenres.movieIds.length > 0 ||
+    selectedPlatforms.platformIds.length > 0 ||
+    selectedSort.id_desc !== "";
+
   return (
     <>
       <SearchBar />
-      {selectedGenres.movieIds.length > 0 ||
-      selectedPlatforms.platformIds.length > 0 ||
-      selectedSort.id_desc !== "" ? (
+      {shouldShowFiltered ? (
         <>
           <GridHeading title="Movies" />
           <FilteredMediaGrid media_type="movie" />
