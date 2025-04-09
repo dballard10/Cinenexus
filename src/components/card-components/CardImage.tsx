@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
+import default_image from "@/assets/cinenexus-logo.webp";
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
-const DEFAULT_IMAGE_URL =
-  "https://via.placeholder.com/500x750?text=No+Image+Available";
 
 interface CardImageProps {
   backdrop_path: string;
@@ -20,7 +19,7 @@ const CardImage = ({
   handleCardClick,
 }: CardImageProps) => {
   const fullImageUrl = !backdrop_path
-    ? DEFAULT_IMAGE_URL
+    ? default_image
     : backdrop_path.startsWith("http")
     ? backdrop_path
     : `${IMAGE_BASE_URL}${backdrop_path}`;
