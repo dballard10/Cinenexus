@@ -51,13 +51,13 @@ const useFilteredBoth = (
   if (combinedResults.data && combinedResults.data.length > 0) {
     if (sort_by) {
       // If a sort filter is selected, sort based on that
-      if (sort_by.includes("popularity")) {
+      if (sort_by.includes("vote_count")) {
         // For popularity sorting, we need to sort by vote_average
         combinedResults.data.sort((a, b) => {
-          if (sort_by === "popularity.desc") {
-            return b.vote_average - a.vote_average;
+          if (sort_by === "vote_count.desc") {
+            return b.vote_count - a.vote_count;
           } else {
-            return a.vote_average - b.vote_average;
+            return a.vote_count - b.vote_count;
           }
         });
       } else if (sort_by.includes("name")) {
@@ -80,10 +80,10 @@ const useFilteredBoth = (
             return dateA.localeCompare(dateB);
           }
         });
-      } else if (sort_by.includes("vote_count")) {
+      } else if (sort_by.includes("vote_average")) {
         // For rating sorting
         combinedResults.data.sort((a, b) => {
-          if (sort_by === "vote_count.desc") {
+          if (sort_by === "vote_average.desc") {
             return b.vote_average - a.vote_average;
           } else {
             return a.vote_average - b.vote_average;
@@ -92,7 +92,7 @@ const useFilteredBoth = (
       }
     } else {
       // Default sorting by rating/popularity (descending)
-      combinedResults.data.sort((a, b) => b.vote_average - a.vote_average);
+      combinedResults.data.sort((a, b) => b.vote_count - a.vote_count);
     }
   }
 

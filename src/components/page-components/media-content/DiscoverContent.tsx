@@ -5,9 +5,11 @@ import SearchBar from "@/components/filters/SearchBar";
 import useTrending from "@/hooks/use-trending";
 import useMediaStore from "@/hooks/use-media-store";
 import FilterTags from "@/components/filters/FilterTags";
+import SearchBothGrid from "@/components/media-grids/SearchBothGrid";
 
 const DiscoverContent = () => {
-  const { selectedGenres, selectedPlatforms, selectedSort } = useMediaStore();
+  const { selectedGenres, selectedPlatforms, selectedSort, searchQuery } =
+    useMediaStore();
 
   const shouldShowFiltered =
     selectedGenres.movieIds.length > 0 ||
@@ -18,7 +20,12 @@ const DiscoverContent = () => {
   return (
     <>
       <SearchBar />
-      {shouldShowFiltered ? (
+      {searchQuery ? (
+        <>
+          <GridHeading title={`Search Results for "${searchQuery}"`} />
+          <SearchBothGrid query={searchQuery} />
+        </>
+      ) : shouldShowFiltered ? (
         <>
           <GridHeading title="Movies & Series" />
           {/* <FilterTags /> */}

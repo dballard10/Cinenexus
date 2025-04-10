@@ -8,6 +8,7 @@ import Overview from "./Overview";
 import ReleaseDate from "./ReleaseDate";
 import MediaGenres from "./MediaGenres";
 import MediaProductionCompanies from "./MediaProductionCompanies";
+import MediaProviders from "./MediaProviders";
 
 const MediaDetails = ({ title }: { title: string }) => {
   const selectedShow = useMediaStore((state) => state.selectedShow);
@@ -27,11 +28,21 @@ const MediaDetails = ({ title }: { title: string }) => {
           </div>
         </div>
         <Overview overview={selectedShow.overview} />
-        <div className="rounded-lg grid grid-cols-2 pt-6">
-          <MediaGenres genres={selectedShow.genres} />
-          <MediaProductionCompanies
-            production_companies={selectedShow.production_companies}
-          />
+        <div className="rounded-lg grid grid-cols-2 pt-6 gap-4">
+          <div className="flex justify-center">
+            <MediaGenres genres={selectedShow.genres} />
+          </div>
+          <div className="flex justify-center">
+            <MediaProviders
+              id={selectedShow.id}
+              media_type={selectedShow.media_type}
+            />
+          </div>
+          <div className="flex justify-center pt-2">
+            <MediaProductionCompanies
+              production_companies={selectedShow.production_companies}
+            />
+          </div>
         </div>
       </div>
       <div className="bg-gray-900 rounded-lg p-4 flex flex-col gap-4 max-h-full overflow-y-auto">
