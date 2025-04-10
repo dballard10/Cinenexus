@@ -31,6 +31,7 @@ interface MediaState {
     id_desc: string;
     name: string;
   };
+  searchQuery: string;
   setSelectedShow: (show: MediaState["selectedShow"]) => void;
   clearSelectedShow: () => void;
   addSelectedGenre: (movieId: number, tvId: number, name: string) => void;
@@ -42,6 +43,8 @@ interface MediaState {
   addSelectedSort: (id_asc: string, id_desc: string, name: string) => void;
   removeSelectedSort: (id_asc: string, id_desc: string, name: string) => void;
   clearSelectedSort: () => void;
+  setSearchQuery: (query: string) => void;
+  clearSearchQuery: () => void;
 }
 
 const useMediaStore = create<MediaState>()((set) => ({
@@ -74,6 +77,7 @@ const useMediaStore = create<MediaState>()((set) => ({
     id_desc: "",
     name: "",
   },
+  searchQuery: "",
   setSelectedShow: (show) => set({ selectedShow: show }),
   clearSelectedShow: () =>
     set({
@@ -161,6 +165,8 @@ const useMediaStore = create<MediaState>()((set) => ({
     set({
       selectedSort: { id_asc: "", id_desc: "", name: "" },
     }),
+  setSearchQuery: (query) => set({ searchQuery: query }),
+  clearSearchQuery: () => set({ searchQuery: "" }),
 }));
 
 export default useMediaStore;

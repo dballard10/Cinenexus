@@ -1,7 +1,7 @@
 export const sortBy = [
   {
-    id_asc: "popularity.asc",
-    id_desc: "popularity.desc",
+    id_asc: "vote_count.asc",
+    id_desc: "vote_count.desc",
     name: "Popularity",
   },
   {
@@ -15,8 +15,8 @@ export const sortBy = [
     name: "Recent",
   },
   {
-    id_asc: "vote_count.asc",
-    id_desc: "vote_count.desc",
+    id_asc: "vote_average.asc",
+    id_desc: "vote_average.desc",
     name: "Rating",
   },
 ];

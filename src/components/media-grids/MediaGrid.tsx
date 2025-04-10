@@ -15,14 +15,14 @@ interface MediaGridProps {
 }
 
 const MediaGrid = ({ useMediaHook }: MediaGridProps) => {
-  const { data: shows, isLoading, error } = useMediaHook();
+  const { data: content, isLoading, error } = useMediaHook();
 
   if (isLoading) return <CardSkeletons />;
   if (error) return <div>Error: {(error as Error).message}</div>;
 
   return (
     <div>
-      <CardGrid media={shows as Media[]} />
+      <CardGrid media={content as Media[]} />
     </div>
   );
 };

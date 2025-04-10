@@ -6,9 +6,11 @@ import useMediaStore from "@/hooks/use-media-store";
 import useTrendingSeries from "@/hooks/series/use-trending-series";
 import useHighestRatedSeries from "@/hooks/series/use-highest-rated-series";
 import FilterTags from "@/components/filters/FilterTags";
+import SearchMediaGrid from "@/components/media-grids/SearchMediaGrid";
 
 const SeriesContent = () => {
-  const { selectedGenres, selectedPlatforms, selectedSort } = useMediaStore();
+  const { selectedGenres, selectedPlatforms, selectedSort, searchQuery } =
+    useMediaStore();
 
   const shouldShowFiltered =
     selectedGenres.movieIds.length > 0 ||
@@ -19,7 +21,12 @@ const SeriesContent = () => {
   return (
     <>
       <SearchBar />
-      {shouldShowFiltered ? (
+      {searchQuery ? (
+        <>
+          <GridHeading title={`Search Results for "${searchQuery}"`} />
+          <SearchMediaGrid query={searchQuery} media_type="tv" />
+        </>
+      ) : shouldShowFiltered ? (
         <>
           <GridHeading title="Series" />
           {/* <FilterTags /> */}

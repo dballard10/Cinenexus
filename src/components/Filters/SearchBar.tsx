@@ -1,10 +1,25 @@
-import { FiSearch } from "react-icons/fi";
+import { FiSearch, FiX } from "react-icons/fi";
+import useMediaStore from "@/hooks/use-media-store";
 
 const SearchBar = () => {
+  const { setSearchQuery, clearSearchQuery, searchQuery } = useMediaStore();
+
   return (
     <div className="search-container">
-      <FiSearch className="search-icon" />
-      <input type="text" placeholder="Search..." className="search-input" />
+      {searchQuery ? (
+        <button onClick={() => clearSearchQuery()}>
+          <FiX className="search-icon" />
+        </button>
+      ) : (
+        <FiSearch className="search-icon" />
+      )}
+      <input
+        type="text"
+        placeholder="Search movies or series..."
+        className="search-input"
+        onChange={(e) => setSearchQuery(e.target.value)}
+        value={searchQuery || ""}
+      />
       <style>
         {`
         .search-container {
