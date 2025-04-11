@@ -17,7 +17,7 @@ const ContentFilters = ({ media_type }: { media_type: string }) => {
       <AccordionItem value="genres">
         <AccordionTrigger className="text-white hover:scale-105">
           <div className="flex items-center justify-between gap-2">
-            <span>Genres</span>
+            <span className="pl-2">Genres</span>
             {selectedGenres.names.length > 0 && (
               <ClearFilterButton filter="genres" />
             )}
@@ -31,7 +31,7 @@ const ContentFilters = ({ media_type }: { media_type: string }) => {
       <AccordionItem value="platforms">
         <AccordionTrigger className="text-white hover:scale-105 no-underline">
           <div className="flex items-center justify-between gap-2">
-            <span>Platforms</span>
+            <span className="pl-2">Platforms</span>
             {selectedPlatforms.platformIds.length > 0 && (
               <ClearFilterButton filter="platforms" />
             )}
@@ -45,7 +45,7 @@ const ContentFilters = ({ media_type }: { media_type: string }) => {
       <AccordionItem value="sort">
         <AccordionTrigger className="text-white hover:scale-105 no-underline">
           <div className="flex items-center justify-between gap-2">
-            <span>Sort By</span>
+            <span className="pl-2">Sort By</span>
             {selectedSort.id_desc !== "" && <ClearFilterButton filter="sort" />}
           </div>
         </AccordionTrigger>

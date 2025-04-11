@@ -80,16 +80,17 @@ const useFilteredBoth = (
             return dateA.localeCompare(dateB);
           }
         });
-      } else if (sort_by.includes("vote_average")) {
-        // For rating sorting
-        combinedResults.data.sort((a, b) => {
-          if (sort_by === "vote_average.desc") {
-            return b.vote_average - a.vote_average;
-          } else {
-            return a.vote_average - b.vote_average;
-          }
-        });
       }
+      // } else if (sort_by.includes("vote_average")) {
+      //   // For rating sorting
+      //   combinedResults.data.sort((a, b) => {
+      //     if (sort_by === "vote_average.desc") {
+      //       return b.vote_average - a.vote_average;
+      //     } else {
+      //       return a.vote_average - b.vote_average;
+      //     }
+      //   });
+      // }
     } else {
       // Default sorting by rating/popularity (descending)
       combinedResults.data.sort((a, b) => b.vote_count - a.vote_count);

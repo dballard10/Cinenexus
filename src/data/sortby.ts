@@ -5,18 +5,18 @@ export const sortBy = [
     name: "Popularity",
   },
   {
-    id_asc: "name.asc",
-    id_desc: "name.desc",
+    id_asc: "title.asc",
+    id_desc: "title.desc",
     name: "Alphabetical",
   },
   {
-    id_asc: "first_air_date.asc",
-    id_desc: "first_air_date.desc",
+    id_asc: "primary_release_date.asc",
+    id_desc: "primary_release_date.desc",
     name: "Recent",
   },
-  {
-    id_asc: "vote_average.asc",
-    id_desc: "vote_average.desc",
-    name: "Rating",
-  },
+  // {
+  //   id_asc: "vote_average.asc",
+  //   id_desc: "vote_average.desc",
+  //   name: "Rating",
+  // },
 ];

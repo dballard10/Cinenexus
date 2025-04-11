@@ -9,6 +9,7 @@ import ReleaseDate from "./ReleaseDate";
 import MediaGenres from "./MediaGenres";
 import MediaProductionCompanies from "./MediaProductionCompanies";
 import MediaProviders from "./MediaProviders";
+import Separator from "../page-components/Separator";
 
 const MediaDetails = ({ title }: { title: string }) => {
   const selectedShow = useMediaStore((state) => state.selectedShow);
@@ -28,7 +29,8 @@ const MediaDetails = ({ title }: { title: string }) => {
           </div>
         </div>
         <Overview overview={selectedShow.overview} />
-        <div className="rounded-lg grid grid-cols-2 pt-6 gap-4">
+        <Separator />
+        <div className="rounded-lg grid grid-cols-2 gap-4">
           <div className="flex justify-center">
             <MediaGenres genres={selectedShow.genres} />
           </div>
@@ -46,16 +48,19 @@ const MediaDetails = ({ title }: { title: string }) => {
         </div>
       </div>
       <div className="bg-gray-900 rounded-lg p-4 flex flex-col gap-4 max-h-full overflow-y-auto">
-        <MediaTrailer
-          id={selectedShow.id}
-          media_type={selectedShow.media_type}
-          title={selectedShow.name}
-        />
-        <MediaImages
-          id={selectedShow.id}
-          media_type={selectedShow.media_type}
-          title={selectedShow.name}
-        />
+        <div className="flex flex-col gap-4">
+          <MediaTrailer
+            id={selectedShow.id}
+            media_type={selectedShow.media_type}
+            title={selectedShow.name}
+          />
+          <Separator />
+          <MediaImages
+            id={selectedShow.id}
+            media_type={selectedShow.media_type}
+            title={selectedShow.name}
+          />
+        </div>
       </div>
     </div>
   );
