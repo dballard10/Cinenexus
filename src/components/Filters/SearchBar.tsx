@@ -25,8 +25,11 @@ const SearchBar = () => {
         .search-container {
           position: relative;
           width: 100%;
-          max-width: 500px;
+          max-width: 700px;
           color: #ffffff;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
         }
 
         .search-icon {

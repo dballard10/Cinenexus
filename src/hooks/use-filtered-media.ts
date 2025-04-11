@@ -19,7 +19,7 @@ const useFilteredMedia = (
 
   const options = {
     method: "GET",
-    url: `https://api.themoviedb.org/3/discover/${media_type}?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1${query}`,
+    url: `https://api.themoviedb.org/3/discover/${media_type}?include_adult=false&include_video=false&language=en-US&page=1${query}`,
     headers: {
       accept: "application/json",
       Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1M2IzMWI3ZmQxYzI3MTA5ZWYyYzg2NjU0MGRhODg4YiIsIm5iZiI6MTc0MDg1MDIwNS42MjcsInN1YiI6IjY3YzM0NDFkNTczYmViMTUyZjY2YzZkNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.i9cpDbqCn9af4f9xt1xpmTe95cFYb_XbSuCHIJ6I_Lc`,
@@ -43,6 +43,7 @@ const useFilteredMedia = (
             id: item.id,
             name: item.title || item.name,
             backdrop_path: item.backdrop_path,
+            vote_count: item.vote_count,
             vote_average: item.vote_average,
             media_type: media_type,
           })
