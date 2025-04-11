@@ -64,12 +64,14 @@ const AsidePanel = ({
               transition-all ease-in-out`}
         onClick={isCollapsed ? handlePanelClick : undefined}
       >
-        <CollapseButton
-          toggleCollapse={toggleCollapse}
-          isCollapsed={isCollapsed}
-        />
+        <div className="flex">
+          <CollapseButton
+            toggleCollapse={toggleCollapse}
+            isCollapsed={isCollapsed}
+          />
+        </div>
 
-        {!isCollapsed && <>{children}</>}
+        {!isCollapsed && <div className="mt-2">{children}</div>}
       </aside>
     </div>
   );
