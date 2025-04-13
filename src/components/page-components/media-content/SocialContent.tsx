@@ -3,7 +3,7 @@ import SearchBar from "@/components/filters/SearchBar";
 import MediaGrid from "@/components/media-grids/MediaGrid";
 import useTrendingMovies from "@/hooks/movies/use-trending-movies";
 
-const FriendsContent = () => {
+const SocialContent = () => {
   return (
     <>
       <SearchBar />
@@ -13,4 +13,4 @@ const FriendsContent = () => {
   );
 };
 
-export default FriendsContent;
+export default SocialContent;

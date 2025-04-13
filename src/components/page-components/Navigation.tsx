@@ -15,16 +15,22 @@ const user = {
 };
 
 const navigation = [
-  { name: "Discover", href: "/", current: false },
+  { name: "Discover", href: "/", current: true },
   { name: "Movies", href: "/movies", current: false },
   { name: "Series", href: "/series", current: false },
-  { name: "Friends", href: "/friends", current: false },
-  { name: "Profile", href: "/profile", current: false },
+  { name: "Social", href: "/social", current: false },
+  { name: "Library", href: "/library", current: false },
 ];
 
 const userNavigation = [
+  { name: "Profile", href: "/profile", current: false },
+  { name: "Friends", href: "/friends", current: false },
   { name: "Settings", href: "/settings" },
   { name: "Sign out", href: "#" },
+];
+
+const userNotifications = [
+  { name: "Notifications", href: "/notifications", current: false },
 ];
 
 export function Navigation() {
@@ -90,17 +96,17 @@ export function Navigation() {
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                      <motion.button
+                      <motion.a
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         title="Notifications"
-                        type="button"
+                        href={userNotifications[0].href}
                         className="relative rounded-full bg-white/5 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200"
                       >
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">View notifications</span>
                         <BellIcon className="h-6 w-6" aria-hidden="true" />
-                      </motion.button>
+                      </motion.a>
 
                       <Menu as="div" className="relative ml-3">
                         <motion.div
@@ -205,16 +211,16 @@ export function Navigation() {
                         {user.email}
                       </div>
                     </div>
-                    <motion.button
+                    <motion.a
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      type="button"
+                      href={userNotifications[0].href}
                       className="relative ml-auto shrink-0 rounded-full bg-white/5 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200"
                     >
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">View notifications</span>
                       <BellIcon className="h-6 w-6" aria-hidden="true" />
-                    </motion.button>
+                    </motion.a>
                   </div>
                   <div className="mt-3 space-y-1 px-2">
                     {userNavigation.map((item) => (

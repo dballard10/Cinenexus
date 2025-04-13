@@ -4,8 +4,8 @@ import useToggleAside from "@/hooks/screen/use-toggleAside";
 import DiscoverContent from "@/components/page-components/media-content/DiscoverContent";
 import MovieContent from "@/components/page-components/media-content/MovieContent";
 import SeriesContent from "@/components/page-components/media-content/SeriesContent";
-import FriendsContent from "@/components/page-components/media-content/FriendsContent";
-import ProfileContent from "@/components/page-components/media-content/ProfileContent";
+import SocialContent from "@/components/page-components/media-content/SocialContent";
+import LibraryContent from "@/components/page-components/media-content/LibraryContent";
 
 interface ContentPageProps {
   pageName: string;
@@ -28,8 +28,8 @@ const ContentPage = ({ pageName }: ContentPageProps) => {
             {pageName === "discover" && <DiscoverContent />}
             {pageName === "movies" && <MovieContent />}
             {pageName === "series" && <SeriesContent />}
-            {pageName === "friends" && <FriendsContent />}
-            {pageName === "profile" && <ProfileContent />}
+            {pageName === "social" && <SocialContent />}
+            {pageName === "library" && <LibraryContent />}
           </div>
         </div>
       </main>

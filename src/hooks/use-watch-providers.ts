@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { platforms } from "@/data/platforms";
-import { WatchProvider } from "@/entities/watch_providers";
+import { WatchProvider } from "@/entities/watch-providers";
 
 const useWatchProviders = (id: number, media_type: string) => {
   const options = {

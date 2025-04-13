@@ -8,6 +8,9 @@ import NotFound from "./pages/NotFound";
 import SettingsPage from "./pages/SettingsPage";
 import MediaDetailsPage from "./pages/MediaDetailsPage";
 import ContentPage from "./pages/ContentPage";
+import NotificationsPage from "./pages/NotificationsPage";
+import ProfilePage from "./pages/ProfilePage";
+import FriendsPage from "./pages/FriendsPage";
 
 const queryClient = new QueryClient();
 
@@ -21,9 +24,12 @@ const App = () => (
           <Route path="/" element={<ContentPage pageName="discover" />} />
           <Route path="/movies" element={<ContentPage pageName="movies" />} />
           <Route path="/series" element={<ContentPage pageName="series" />} />
-          <Route path="/profile" element={<ContentPage pageName="profile" />} />
-          <Route path="/friends" element={<ContentPage pageName="friends" />} />
+          <Route path="/library" element={<ContentPage pageName="library" />} />
+          <Route path="/social" element={<ContentPage pageName="social" />} />
+          <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/media/:id" element={<MediaDetailsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/friends" element={<FriendsPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
