@@ -29,7 +29,6 @@ const Card = ({
 
   const handleCardClick = () => {
     if (!isLoading && !error && showData) {
-      console.log("showData", showData);
       setSelectedShow(showData as any);
     }
   };

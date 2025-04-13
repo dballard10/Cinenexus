@@ -34,8 +34,6 @@ const useSearchBoth = (query: string) => {
 
   combinedResults.data.sort((a, b) => b.vote_count - a.vote_count);
 
-  console.log("Combined results: ", combinedResults);
-
   return combinedResults;
 };
 

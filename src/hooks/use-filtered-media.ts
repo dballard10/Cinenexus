@@ -28,16 +28,10 @@ const useFilteredMedia = (
     },
   };
 
-  console.log("API URL: ", options.url);
-
   return useQuery({
     queryKey: ["filtered-media", genre_list, platform_list, sort_by],
     queryFn: async () => {
       const response = await axios.request(options);
-
-      console.log("Genres list:", genre_list);
-      console.log("Platforms list:", platform_list);
-      console.log("Sort by:", sort_by);
 
       if (response && response.data.results) {
         return response.data.results.map(
