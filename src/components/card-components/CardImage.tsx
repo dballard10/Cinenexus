@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import default_image from "@/assets/cinenexus-logo.webp";
+import default_image from "@/assets/cinetik-logo.webp";
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
