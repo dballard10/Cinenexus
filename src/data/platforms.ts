@@ -30,12 +30,6 @@ export const platforms = [
     provider_id: 3,
   },
   {
-    display_priority: 24,
-    logo_path: "/b8edpTaLCHFrUnhpGQIZJUpFX7T.jpg",
-    provider_name: "HBO Max",
-    provider_id: 384,
-  },
-  {
     display_priority: 7,
     logo_path: "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
     provider_name: "Hulu",
