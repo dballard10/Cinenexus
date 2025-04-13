@@ -57,26 +57,26 @@ export function Navigation() {
                       />
                     </a>
                   </motion.div>
-                  <div className="hidden md:block">
-                    <div className="ml-10 flex items-baseline space-x-4">
-                      {navigationWithCurrent.map((item) => (
-                        <motion.a
-                          key={item.name}
-                          href={item.href}
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className={cn(
-                            item.current
-                              ? "bg-white/10 text-white"
-                              : "text-gray-300 hover:bg-white/5 hover:text-white",
-                            "rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200"
-                          )}
-                          aria-current={item.current ? "page" : undefined}
-                        >
-                          {item.name}
-                        </motion.a>
-                      ))}
-                    </div>
+                </div>
+                <div className="hidden md:flex justify-center flex-1">
+                  <div className="flex items-center space-x-4">
+                    {navigationWithCurrent.map((item) => (
+                      <motion.a
+                        key={item.name}
+                        href={item.href}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={cn(
+                          item.current
+                            ? "bg-white/10 text-white"
+                            : "text-gray-300 hover:bg-white/5 hover:text-white",
+                          "rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200"
+                        )}
+                        aria-current={item.current ? "page" : undefined}
+                      >
+                        {item.name}
+                      </motion.a>
+                    ))}
                   </div>
                 </div>
                 <div className="hidden md:block">
@@ -113,15 +113,15 @@ export function Navigation() {
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-lg bg-white/10 backdrop-blur-lg py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border border-white/10">
+                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-lg bg-gray-900/70 backdrop-blur-lg py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border border-white/50">
                           {userNavigation.map((item) => (
                             <Menu.Item key={item.name}>
                               {({ active }) => (
                                 <a
                                   href={item.href}
                                   className={cn(
-                                    active ? "bg-white/5" : "",
-                                    "block px-4 py-2 text-sm text-gray-300 hover:text-white transition-all duration-200"
+                                    active ? "bg-white/10" : "",
+                                    "block px-4 py-2 text-sm text-gray-100 hover:text-white transition-all duration-200"
                                   )}
                                 >
                                   {item.name}

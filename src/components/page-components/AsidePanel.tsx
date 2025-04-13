@@ -1,30 +1,14 @@
 import CollapseButton from "../filters/CollapseButton";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
+import ContentFilters from "../filters/ContentFilters";
 
 interface AsidePanelProps {
   isCollapsed: boolean;
   toggleCollapse: () => void;
-  children?: React.ReactNode;
 }
 
-const AsidePanel = ({
-  isCollapsed,
-  toggleCollapse,
-  children,
-}: AsidePanelProps) => {
-  const [position, setPosition] = useState("relative");
+const AsidePanel = ({ isCollapsed, toggleCollapse }: AsidePanelProps) => {
   const asideRef = useRef<HTMLDivElement>(null);
-
-  // When expanding, change to fixed position
-  useEffect(() => {
-    if (!isCollapsed) {
-      setPosition("fixed");
-    } else {
-      // Short delay to allow animation to complete before switching back to relative
-      const timer = setTimeout(() => setPosition("relative"), 300);
-      return () => clearTimeout(timer);
-    }
-  }, [isCollapsed]);
 
   // Handle click outside to collapse panel
   useEffect(() => {
@@ -44,35 +28,29 @@ const AsidePanel = ({
     };
   }, [isCollapsed, toggleCollapse]);
 
-  // Handle click on panel to expand
-  const handlePanelClick = () => {
-    if (isCollapsed) {
-      toggleCollapse();
-    }
-  };
-
   return (
-    <div className="relative min-w-[4rem] h-full">
+    <div className="relative">
       <aside
         ref={asideRef}
-        className={`${position} top-15 left-0 h-full bg-gray-900 text-white p-3 duration-100 overflow-y-auto z-50
-              ${
-                isCollapsed
-                  ? "w-16 cursor-pointer"
-                  : "w-80 shadow-2xl shadow-black/50 border-r border-gray-700"
-              }
-              transition-all ease-in-out`}
-        onClick={isCollapsed ? handlePanelClick : undefined}
+        className={`absolute -top-8 -left-4 m-0 h-screen bg-gray-900 text-white overflow-y-auto z-40
+            w-80 transition-transform ease-in-out duration-300
+            ${
+              isCollapsed
+                ? "-translate-x-full shadow-none border-none"
+                : "translate-x-0 shadow-2xl shadow-black/50 border-r border-gray-700"
+            }`}
       >
-        <div className="flex">
-          <CollapseButton
-            toggleCollapse={toggleCollapse}
-            isCollapsed={isCollapsed}
-          />
+        <div className="mt-2 px-3 pt-20 pb-14">
+          <ContentFilters media_type="both" />
         </div>
-
-        {!isCollapsed && <div className="mt-2">{children}</div>}
       </aside>
+
+      <div className="absolute top-2 left-0 z-50 transition-all duration-300 ease-in-out">
+        <CollapseButton
+          toggleCollapse={toggleCollapse}
+          isCollapsed={isCollapsed}
+        />
+      </div>
     </div>
   );
 };

@@ -22,7 +22,17 @@ const CollapseButton = ({
           <TbLayoutSidebarLeftCollapseFilled className="w-6 h-6" />
         )}
       </button>
-      {!isCollapsed && <h2 className="text-xl font-semibold">Filters</h2>}
+      <div className="overflow-hidden">
+        <h2
+          className={`text-xl font-semibold transition-all duration-300 ${
+            isCollapsed
+              ? "opacity-0 transform translate-x-4 max-w-0"
+              : "opacity-100 transform translate-x-0 max-w-xs"
+          }`}
+        >
+          Filters
+        </h2>
+      </div>
     </header>
   );
 };
