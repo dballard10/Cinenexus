@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useMediaStore from "@/hooks/use-media-store";
 
 interface SortByProps {
@@ -8,15 +8,20 @@ interface SortByProps {
 }
 
 const SortBy = ({ id_asc, id_desc, name }: SortByProps) => {
-  const { addSelectedSort, removeSelectedSort } = useMediaStore();
+  const { selectedSort, addSelectedSort, removeSelectedSort } = useMediaStore();
   const [isSelected, setIsSelected] = useState(false);
 
-  const handleClick = () => {
-    setIsSelected(!isSelected);
+  // Check if this sort option is currently selected
+  useEffect(() => {
+    setIsSelected(selectedSort.name === name);
+  }, [selectedSort, name]);
 
+  const handleClick = () => {
     if (isSelected) {
+      // If already selected, deselect it
       removeSelectedSort(id_asc, id_desc, name);
     } else {
+      // If not selected, select it (this will replace any existing selection)
       addSelectedSort(id_asc, id_desc, name);
     }
   };
