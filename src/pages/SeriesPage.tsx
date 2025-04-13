@@ -6,13 +6,13 @@ import SeriesContent from "@/components/page-components/media-content/SeriesCont
 
 const SeriesPage = () => {
   const { isCollapsed, toggleCollapse } = useToggleAside({
-    initialState: false,
+    initialState: true,
   });
 
   return (
     <div className="h-screen flex flex-col bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">
       <Navigation />
-      <main className="flex flex-1 overflow-hidden">
+      <main className="relative flex-1 overflow-hidden">
         <AsidePanel isCollapsed={isCollapsed} toggleCollapse={toggleCollapse}>
           <ContentFilters media_type="tv" />
         </AsidePanel>

@@ -10,7 +10,7 @@ const useFilteredMedia = (
 ) => {
   const sort_by_query = `sort_by=${sort_by}`;
   const genre_query = `with_genres=${genre_list}`;
-  const platform_query = `with_watch_providers=${platform_list}`;
+  const platform_query = `with_watch_providers=${platform_list}&watch_region=US`;
 
   const query =
     (sort_by ? "&" + sort_by_query : "") +

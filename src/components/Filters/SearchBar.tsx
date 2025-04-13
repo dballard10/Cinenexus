@@ -32,6 +32,13 @@ const SearchBar = () => {
           align-items: center;
         }
 
+        @media (max-width: 850px) {
+          .search-container {
+            margin-left: 58px;
+            width: 88%;
+          }
+        }
+
         .search-icon {
           position: absolute;
           left: 12px;
