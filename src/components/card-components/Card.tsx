@@ -48,16 +48,13 @@ const Card = ({
       <div className="absolute top-2 right-2 z-10 opacity-0 rounded-full bg-black/70 shadow group-hover:opacity-100 transition-opacity duration-300">
         <FavoritesButton showId={id} />
       </div>
-      <div className="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
         <div className="w-full p-2 bg-black bg-opacity-80">
           <div className="flex flex-row justify-between">
             <div className="flex flex-col gap-1">
-              <MediaTitle
-                name={name}
-                id={id}
-                media_type={media_type}
-                handleCardClick={handleCardClick}
-              />
+              <div className="flex flex-row gap-4">
+                <MediaTitle name={name} />
+              </div>
               <div className="flex flex-row gap-4">
                 <MediaType media_type={media_type} />
               </div>

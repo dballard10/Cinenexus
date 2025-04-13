@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Eye } from "lucide-react";
+import { TbEyePlus, TbEyeX, TbEye, TbEyeFilled } from "react-icons/tb";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -15,6 +15,7 @@ const WatchedButton = ({
   onToggle,
 }: WatchedButtonProps) => {
   const [isWatched, setIsWatched] = useState(initialState);
+  const [isHovering, setIsHovering] = useState(false);
 
   const handleClick = () => {
     const newState = !isWatched;
@@ -27,21 +28,22 @@ const WatchedButton = ({
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onClick={handleClick}
-      title="Mark as watched"
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      title={isWatched ? "Remove from watched" : "Add to watched"}
       className={cn(
         "transition-all duration-300 p-3 rounded-full",
         "hover:bg-blue-500/20",
         "group"
       )}
     >
-      <Eye
-        className={cn(
-          "w-6 h-6 transition-all duration-300",
-          isWatched
-            ? "text-blue-500"
-            : "text-gray-700 group-hover:text-blue-500"
-        )}
-      />
+      {isWatched ? (
+        <TbEyeFilled className="w-6 h-6 text-blue-500 transition-all duration-300" />
+      ) : isHovering ? (
+        <TbEyePlus className="w-6 h-6 text-gray-700 group-hover:text-blue-500 transition-all duration-300" />
+      ) : (
+        <TbEye className="w-6 h-6 text-gray-700 group-hover:text-blue-500 transition-all duration-300" />
+      )}
     </motion.button>
   );
 };

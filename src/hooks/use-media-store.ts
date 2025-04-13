@@ -32,6 +32,7 @@ interface MediaState {
     name: string;
   };
   searchQuery: string;
+  expandedNav: boolean;
   setSelectedShow: (show: MediaState["selectedShow"]) => void;
   clearSelectedShow: () => void;
   addSelectedGenre: (movieId: number, tvId: number, name: string) => void;
@@ -45,6 +46,7 @@ interface MediaState {
   clearSelectedSort: () => void;
   setSearchQuery: (query: string) => void;
   clearSearchQuery: () => void;
+  setExpandedNav: (isExpanded: boolean) => void;
 }
 
 const useMediaStore = create<MediaState>()((set) => ({
@@ -78,6 +80,7 @@ const useMediaStore = create<MediaState>()((set) => ({
     name: "",
   },
   searchQuery: "",
+  expandedNav: false,
   setSelectedShow: (show) => set({ selectedShow: show }),
   clearSelectedShow: () =>
     set({
@@ -167,6 +170,7 @@ const useMediaStore = create<MediaState>()((set) => ({
     }),
   setSearchQuery: (query) => set({ searchQuery: query }),
   clearSearchQuery: () => set({ searchQuery: "" }),
+  setExpandedNav: (isExpanded) => set({ expandedNav: isExpanded }),
 }));
 
 export default useMediaStore;
