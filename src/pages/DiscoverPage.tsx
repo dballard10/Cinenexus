@@ -1,4 +1,3 @@
-import ContentFilters from "@/components/filters/ContentFilters";
 import { Navigation } from "@/components/page-components/Navigation";
 import AsidePanel from "@/components/page-components/AsidePanel";
 import useToggleAside from "@/hooks/screen/use-toggleAside";

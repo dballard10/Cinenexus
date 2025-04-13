@@ -30,7 +30,7 @@ const WatchedButton = ({
       title="Mark as watched"
       className={cn(
         "transition-all duration-300 p-3 rounded-full",
-        "hover:bg-blue-500/20",
+        "hover:brightness-125",
         "group"
       )}
     >
@@ -39,7 +39,7 @@ const WatchedButton = ({
           "w-6 h-6 transition-all duration-300",
           isWatched
             ? "fill-blue-500 text-blue-500"
-            : "text-gray-400 group-hover:text-blue-500"
+            : "text-gray-700 group-hover:text-blue-500"
         )}
       />
     </motion.button>

@@ -1,4 +1,3 @@
-import Rating from "../media-details/Rating";
 import FavoritesButton from "./FavoritesButton";
 import MediaTitle from "./MediaTitle";
 import CardImage from "./CardImage";

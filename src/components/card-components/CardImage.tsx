@@ -18,6 +18,7 @@ const CardImage = ({
   media_type,
   handleCardClick,
 }: CardImageProps) => {
+  console.log("backdrop_path", backdrop_path);
   const fullImageUrl = !backdrop_path
     ? default_image
     : backdrop_path.startsWith("http")

@@ -32,7 +32,7 @@ const AsidePanel = ({ isCollapsed, toggleCollapse }: AsidePanelProps) => {
     <div className="relative">
       <aside
         ref={asideRef}
-        className={`absolute -top-8 -left-4 m-0 h-screen bg-gray-900 text-white overflow-y-auto z-40
+        className={`absolute -top-8 -left-8 m-0 h-screen bg-gray-900 text-white overflow-y-auto z-40
             w-80 transition-transform ease-in-out duration-300
             ${
               isCollapsed

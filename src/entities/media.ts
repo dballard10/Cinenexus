@@ -12,7 +12,6 @@ export interface MediaDetails extends Media {
   overview: string;
   release_date: string;
   runtime: number;
-  backdrop_path: string;
   genres: { id: number; name: string }[];
   production_companies: { id: number; name: string }[];
   production_countries: { iso_3166_1: string; name: string }[];
