@@ -3,7 +3,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import defaultProfilePic from "../../assets/default-profile-pic.webp";
-import logo from "../../assets/cinenexus-logo.webp";
+import logo from "../../assets/cinetik-logo.webp";
 import { useLocation } from "react-router-dom";
 
 const user = {
