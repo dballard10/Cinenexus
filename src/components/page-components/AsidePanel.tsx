@@ -45,7 +45,7 @@ const AsidePanel = ({ isCollapsed, toggleCollapse }: AsidePanelProps) => {
         </div>
       </aside>
 
-      <div className="absolute top-2 left-0 z-50 transition-all duration-300 ease-in-out">
+      <div className="absolute top-2 -left-2 z-50 transition-all duration-300 ease-in-out">
         <CollapseButton
           toggleCollapse={toggleCollapse}
           isCollapsed={isCollapsed}

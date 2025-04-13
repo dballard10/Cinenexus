@@ -38,7 +38,7 @@ const CollapseButton = ({
           onClick={(e) => e.stopPropagation()}
           className={`text-xl font-semibold transition-all duration-300 ${
             isCollapsed
-              ? "opacity-0 transform translate-x-4 max-w-0"
+              ? "opacity-0 transform translate-x-[-1rem] max-w-0"
               : "opacity-100 transform translate-x-0 max-w-xs"
           }`}
         >

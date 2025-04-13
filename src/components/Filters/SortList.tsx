@@ -6,6 +6,7 @@ const SortList = () => {
     <div className="flex flex-col gap-2">
       {sortBy.map((option) => (
         <SortBy
+          key={option.name}
           id_asc={option.id_asc}
           id_desc={option.id_desc}
           name={option.name}
