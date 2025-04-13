@@ -19,10 +19,12 @@ const useFilteredMedia = (
 
   const options = {
     method: "GET",
-    url: `https://api.themoviedb.org/3/discover/${media_type}?include_adult=false&include_video=false&language=en-US&page=1${query}`,
+    url: `${
+      import.meta.env.VITE_TMDB_BASE_URL
+    }/discover/${media_type}?include_adult=false&include_video=false&language=en-US&page=1${query}`,
     headers: {
       accept: "application/json",
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1M2IzMWI3ZmQxYzI3MTA5ZWYyYzg2NjU0MGRhODg4YiIsIm5iZiI6MTc0MDg1MDIwNS42MjcsInN1YiI6IjY3YzM0NDFkNTczYmViMTUyZjY2YzZkNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.i9cpDbqCn9af4f9xt1xpmTe95cFYb_XbSuCHIJ6I_Lc`,
+      Authorization: `Bearer ${import.meta.env.VITE_TMDB_READ_ACCESS_TOKEN}`,
     },
   };
 

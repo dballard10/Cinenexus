@@ -4,7 +4,6 @@ import MediaGrid from "@/components/media-grids/MediaGrid";
 import SearchBar from "@/components/filters/SearchBar";
 import useTrending from "@/hooks/use-trending";
 import useMediaStore from "@/hooks/use-media-store";
-import FilterTags from "@/components/filters/FilterTags";
 import SearchBothGrid from "@/components/media-grids/SearchBothGrid";
 
 const DiscoverContent = () => {
@@ -28,7 +27,6 @@ const DiscoverContent = () => {
       ) : shouldShowFiltered ? (
         <>
           <GridHeading title="Movies & Series" />
-          {/* <FilterTags /> */}
           <FilteredBothGrid />
         </>
       ) : (

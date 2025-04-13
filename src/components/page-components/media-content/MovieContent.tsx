@@ -5,7 +5,6 @@ import MediaGrid from "@/components/media-grids/MediaGrid";
 import useTrendingMovies from "@/hooks/movies/use-trending-movies";
 import useHighestRatedMovies from "@/hooks/movies/use-highest-rated-movies";
 import useMediaStore from "@/hooks/use-media-store";
-import FilterTags from "@/components/filters/FilterTags";
 import SearchMediaGrid from "@/components/media-grids/SearchMediaGrid";
 
 const MovieContent = () => {
@@ -28,7 +27,6 @@ const MovieContent = () => {
       ) : shouldShowFiltered ? (
         <>
           <GridHeading title="Movies" />
-          {/* <FilterTags /> */}
           <FilteredMediaGrid media_type="movie" />
         </>
       ) : (

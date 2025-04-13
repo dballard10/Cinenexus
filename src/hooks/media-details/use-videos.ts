@@ -22,11 +22,13 @@ const useVideos = (id: number | undefined, media_type: string | undefined) => {
     method: "GET",
     url:
       id && media_type
-        ? `https://api.themoviedb.org/3/${media_type}/${id}/videos?language=en`
+        ? `${
+            import.meta.env.VITE_TMDB_BASE_URL
+          }/${media_type}/${id}/videos?language=en`
         : "",
     headers: {
       accept: "application/json",
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1M2IzMWI3ZmQxYzI3MTA5ZWYyYzg2NjU0MGRhODg4YiIsIm5iZiI6MTc0MDg1MDIwNS42MjcsInN1YiI6IjY3YzM0NDFkNTczYmViMTUyZjY2YzZkNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.i9cpDbqCn9af4f9xt1xpmTe95cFYb_XbSuCHIJ6I_Lc`,
+      Authorization: `Bearer ${import.meta.env.VITE_TMDB_READ_ACCESS_TOKEN}`,
     },
   };
 
