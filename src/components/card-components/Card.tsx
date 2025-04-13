@@ -43,10 +43,10 @@ const Card = ({
         media_type={media_type}
         handleCardClick={handleCardClick}
       />
-      <div className="absolute top-2 left-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute top-2 left-2 z-10 opacity-0 rounded-full bg-black/70 shadow group-hover:opacity-100 transition-opacity duration-300">
         <WatchedButton showId={id} />
       </div>
-      <div className="absolute top-2 right-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute top-2 right-2 z-10 opacity-0 rounded-full bg-black/70 shadow group-hover:opacity-100 transition-opacity duration-300">
         <FavoritesButton showId={id} />
       </div>
       <div className="absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
