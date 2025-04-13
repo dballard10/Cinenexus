@@ -1,24 +1,24 @@
 import { useState } from "react";
-import { Star } from "lucide-react";
+import { Eye } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-interface FavoritesButtonProps {
+interface WatchedButtonProps {
   showId: number;
   initialState?: boolean;
-  onToggle?: (showId: number, isFavorite: boolean) => void;
+  onToggle?: (showId: number, isWatched: boolean) => void;
 }
 
-const FavoritesButton = ({
+const WatchedButton = ({
   showId,
   initialState = false,
   onToggle,
-}: FavoritesButtonProps) => {
-  const [isFavorite, setIsFavorite] = useState(initialState);
+}: WatchedButtonProps) => {
+  const [isWatched, setIsWatched] = useState(initialState);
 
   const handleClick = () => {
-    const newState = !isFavorite;
-    setIsFavorite(newState);
+    const newState = !isWatched;
+    setIsWatched(newState);
     onToggle?.(showId, newState);
   };
 
@@ -27,23 +27,23 @@ const FavoritesButton = ({
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onClick={handleClick}
-      title="Add to favorites"
+      title="Mark as watched"
       className={cn(
         "transition-all duration-300 p-3 rounded-full",
-        "hover:bg-purple-500/20",
+        "hover:bg-blue-500/20",
         "group"
       )}
     >
-      <Star
+      <Eye
         className={cn(
           "w-6 h-6 transition-all duration-300",
-          isFavorite
-            ? "fill-purple-500 text-purple-500"
-            : "text-gray-400 group-hover:text-purple-500"
+          isWatched
+            ? "fill-blue-500 text-blue-500"
+            : "text-gray-400 group-hover:text-blue-500"
         )}
       />
     </motion.button>
   );
 };
 
-export default FavoritesButton;
+export default WatchedButton;
