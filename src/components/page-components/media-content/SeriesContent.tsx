@@ -5,7 +5,6 @@ import MediaGrid from "@/components/media-grids/MediaGrid";
 import useMediaStore from "@/hooks/use-media-store";
 import useTrendingSeries from "@/hooks/series/use-trending-series";
 import useHighestRatedSeries from "@/hooks/series/use-highest-rated-series";
-import FilterTags from "@/components/filters/FilterTags";
 import SearchMediaGrid from "@/components/media-grids/SearchMediaGrid";
 
 const SeriesContent = () => {
@@ -29,7 +28,6 @@ const SeriesContent = () => {
       ) : shouldShowFiltered ? (
         <>
           <GridHeading title="Series" />
-          {/* <FilterTags /> */}
           <FilteredMediaGrid media_type="tv" />
         </>
       ) : (
