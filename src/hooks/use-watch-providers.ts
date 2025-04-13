@@ -15,14 +15,10 @@ const useWatchProviders = (id: number, media_type: string) => {
     },
   };
 
-  console.log("API URL: ", options.url);
-
   return useQuery({
     queryKey: ["watch-providers", id, media_type],
     queryFn: async () => {
       const response = await axios.request(options);
-
-      console.log("Watch providers:", response.data);
 
       // Check if we have US providers and return only those
       if (response?.data?.results?.US) {

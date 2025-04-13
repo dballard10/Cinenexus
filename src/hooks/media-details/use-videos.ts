@@ -35,7 +35,6 @@ const useVideos = (id: number | undefined, media_type: string | undefined) => {
   return useQuery<{ data: VideosResponse }>({
     queryKey: ["videos", id, media_type],
     queryFn: async () => {
-      console.log(`API Request URL: ${options.url}`);
       const response = await axios.request(options);
       return response;
     },

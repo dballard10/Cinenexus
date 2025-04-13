@@ -17,7 +17,6 @@ const useImages = (id: number, media_type: string) => {
   return useQuery({
     queryKey: ["images", id, media_type],
     queryFn: () => {
-      console.log(`API Request URL: ${options.url}`);
       return axios.request(options);
     },
   });

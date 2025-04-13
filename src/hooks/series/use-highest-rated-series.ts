@@ -17,8 +17,6 @@ const useHighestRatedSeries = () => {
     queryFn: async () => {
       const response = await axios.request(options);
 
-      console.log("Response data results:", response.data.results);
-
       if (response && response.data.results) {
         return response.data.results.map(
           (item: any): Media => ({

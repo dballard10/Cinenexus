@@ -14,8 +14,6 @@ const useSearchMedia = (query: string, media_type: string) => {
     },
   };
 
-  console.log("Search API URL: ", options.url);
-
   return useQuery({
     queryKey: ["search-media", query, media_type],
     queryFn: async () => {
