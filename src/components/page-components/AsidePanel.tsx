@@ -1,7 +1,6 @@
 import CollapseButton from "../filters/CollapseButton";
 import { useEffect, useRef } from "react";
 import ContentFilters from "../filters/ContentFilters";
-import useMediaStore from "@/hooks/use-media-store";
 
 interface AsidePanelProps {
   isCollapsed: boolean;
@@ -10,7 +9,6 @@ interface AsidePanelProps {
 
 const AsidePanel = ({ isCollapsed, toggleCollapse }: AsidePanelProps) => {
   const asideRef = useRef<HTMLDivElement>(null);
-  const isExpandedNav = useMediaStore((state) => state.expandedNav);
   // Handle click outside to collapse panel
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -30,10 +28,10 @@ const AsidePanel = ({ isCollapsed, toggleCollapse }: AsidePanelProps) => {
   }, [isCollapsed, toggleCollapse]);
 
   return (
-    <div className={`relative ${isExpandedNav ? "top-[400px]" : ""}`}>
+    <div className={"relative"}>
       <aside
         ref={asideRef}
-        className={`absolute -top-8 -left-8 m-0 h-screen bg-gray-900 text-white overflow-y-auto z-40
+        className={`absolute -top-8 -left-8 m-0 h-[calc(100vh-4rem)] bg-gray-900 text-white overflow-y-auto z-30
             w-80 transition-transform ease-in-out duration-300
             ${
               isCollapsed
@@ -46,7 +44,7 @@ const AsidePanel = ({ isCollapsed, toggleCollapse }: AsidePanelProps) => {
         </div>
       </aside>
 
-      <div className="absolute top-2 -left-2 z-50 transition-all duration-300 ease-in-out">
+      <div className="absolute top-2 -left-2 z-40 transition-all duration-300 ease-in-out">
         <CollapseButton
           toggleCollapse={toggleCollapse}
           isCollapsed={isCollapsed}

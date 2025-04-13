@@ -5,8 +5,7 @@ import { motion } from "framer-motion";
 import defaultProfilePic from "../../assets/default-profile-pic.webp";
 import logo from "../../assets/cinetik-logo.webp";
 import { useLocation } from "react-router-dom";
-import useMediaStore from "@/hooks/use-media-store";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const user = {
   name: "Dylan Ballard",
@@ -35,43 +34,81 @@ const userNotifications = [
 
 export function Navigation() {
   const location = useLocation();
-  const setExpandedNav = useMediaStore((state) => state.setExpandedNav);
+  const disclosureButtonRef = useRef<HTMLButtonElement | null>(null);
 
   const navigationWithCurrent = navigation.map((item) => ({
     ...item,
     current: location.pathname === item.href,
   }));
 
+  // Add window resize event listener to close mobile menu on larger screens
+  useEffect(() => {
+    const handleResize = () => {
+      // Check if we're at a desktop breakpoint (768px and above for md: in Tailwind)
+      if (window.innerWidth >= 768) {
+        // If the mobile menu is open, close it by clicking the button
+        if (
+          disclosureButtonRef.current &&
+          document.body.style.overflow === "hidden"
+        ) {
+          disclosureButtonRef.current.click();
+        }
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Run once on mount to handle initial state
+    handleResize();
+
+    // Clean up event listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className="relative z-50">
+    <div className="relative">
       <Disclosure
         as="nav"
-        className="bg-white/10 backdrop-blur-lg border-b border-white/10"
+        className="bg-white/10 backdrop-blur-lg border-b border-white/10 relative z-50"
       >
         {({ open }) => {
-          // Update expandedNav state when mobile menu opens/closes
+          // Update body overflow when mobile menu opens/closes
           useEffect(() => {
-            setExpandedNav(open);
-          }, [open, setExpandedNav]);
+            // Prevent body scrolling when mobile menu is open
+            if (open) {
+              document.body.style.overflow = "hidden";
+            } else {
+              document.body.style.overflow = "";
+            }
+
+            // Cleanup function to ensure we reset overflow on unmount
+            return () => {
+              document.body.style.overflow = "";
+            };
+          }, [open]);
 
           return (
             <>
               <div className="mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex h-16 items-center justify-between">
+                <div className="flex h-16 items-center justify-between relative z-50">
                   <div className="flex items-center">
-                    <motion.div
-                      className="shrink-0"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <a href="/">
-                        <img
-                          className="h-12 w-auto rounded-full"
-                          src={logo}
-                          alt="Reel Friends Logo"
-                        />
-                      </a>
-                    </motion.div>
+                    <div className="relative z-[100]">
+                      <motion.div
+                        className="shrink-0"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <a href="/">
+                          <img
+                            className="h-12 w-auto rounded-full"
+                            src={logo}
+                            alt="Reel Friends Logo"
+                          />
+                        </a>
+                      </motion.div>
+                    </div>
                   </div>
                   <div className="hidden md:flex justify-center flex-1">
                     <div className="flex items-center space-x-4">
@@ -101,7 +138,7 @@ export function Navigation() {
                         whileTap={{ scale: 0.95 }}
                         title="Notifications"
                         href={userNotifications[0].href}
-                        className="relative rounded-full bg-white/5 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200"
+                        className="relative rounded-full bg-white/5 p-1 text-gray-400 hover:text-purple-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200"
                       >
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">View notifications</span>
@@ -150,31 +187,48 @@ export function Navigation() {
                       </Menu>
                     </div>
                   </div>
-                  <div className="-mr-2 flex md:hidden">
-                    <Disclosure.Button className="relative inline-flex items-center justify-center rounded-lg bg-white/5 p-2 text-gray-400 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200">
-                      <span className="absolute -inset-0.5" />
-                      <span className="sr-only">Open main menu</span>
-                      {open ? (
-                        <XMarkIcon
-                          className="block h-6 w-6"
-                          aria-hidden="true"
-                        />
-                      ) : (
-                        <Bars3Icon
-                          className="block h-6 w-6"
-                          aria-hidden="true"
-                        />
-                      )}
-                    </Disclosure.Button>
+                  <div className="-mr-2 flex md:hidden z-50">
+                    <div className="relative z-[100]">
+                      <Disclosure.Button
+                        ref={disclosureButtonRef}
+                        className="relative inline-flex items-center justify-center rounded-lg bg-white/5 p-2 text-gray-400 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200"
+                      >
+                        <span className="absolute -inset-0.5" />
+                        <span className="sr-only">Open main menu</span>
+                        {open ? (
+                          <XMarkIcon
+                            className="block h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        ) : (
+                          <Bars3Icon
+                            className="block h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        )}
+                      </Disclosure.Button>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <Disclosure.Panel className="md:hidden">
+              {open && (
                 <motion.div
-                  initial={{ opacity: 0, y: -10 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="fixed top-16 inset-x-0 h-[calc(100vh-4rem)] bg-black/50 z-60 md:hidden pointer-events-none"
+                  aria-hidden="true"
+                />
+              )}
+
+              <Disclosure.Panel className="fixed top-16 left-0 right-0 z-30 bg-gray-900 backdrop-blur-lg shadow-xl border-b border-white/10 md:hidden max-h-[calc(100vh-4rem)] overflow-y-auto">
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
                   className="space-y-1 px-2 pb-3 pt-2 sm:px-3"
                 >
                   {navigationWithCurrent.map((item) => (
@@ -194,8 +248,14 @@ export function Navigation() {
                     </Disclosure.Button>
                   ))}
                 </motion.div>
-                <div className="border-t border-white/10 pb-3 pt-4">
-                  <div className="flex items-center px-5">
+                <div className="border-t border-white/10 pb-3 pt-4 bg-gray-900">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
+                    className="flex items-center px-5"
+                  >
                     <div className="shrink-0">
                       <img
                         className="h-10 w-10 rounded-full"
@@ -221,8 +281,14 @@ export function Navigation() {
                       <span className="sr-only">View notifications</span>
                       <BellIcon className="h-6 w-6" aria-hidden="true" />
                     </motion.a>
-                  </div>
-                  <div className="mt-3 space-y-1 px-2">
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3, delay: 0.2 }}
+                    className="mt-3 space-y-1 px-2"
+                  >
                     {userNavigation.map((item) => (
                       <Disclosure.Button
                         key={item.name}
@@ -233,7 +299,7 @@ export function Navigation() {
                         {item.name}
                       </Disclosure.Button>
                     ))}
-                  </div>
+                  </motion.div>
                 </div>
               </Disclosure.Panel>
             </>
