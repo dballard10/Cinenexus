@@ -1,6 +1,7 @@
 import CollapseButton from "../filters/CollapseButton";
 import { useEffect, useRef } from "react";
 import ContentFilters from "../filters/ContentFilters";
+import useMediaStore from "@/hooks/use-media-store";
 
 interface AsidePanelProps {
   isCollapsed: boolean;
@@ -9,7 +10,7 @@ interface AsidePanelProps {
 
 const AsidePanel = ({ isCollapsed, toggleCollapse }: AsidePanelProps) => {
   const asideRef = useRef<HTMLDivElement>(null);
-
+  const isExpandedNav = useMediaStore((state) => state.expandedNav);
   // Handle click outside to collapse panel
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -29,7 +30,7 @@ const AsidePanel = ({ isCollapsed, toggleCollapse }: AsidePanelProps) => {
   }, [isCollapsed, toggleCollapse]);
 
   return (
-    <div className="relative">
+    <div className={`relative ${isExpandedNav ? "top-[400px]" : ""}`}>
       <aside
         ref={asideRef}
         className={`absolute -top-8 -left-8 m-0 h-screen bg-gray-900 text-white overflow-y-auto z-40

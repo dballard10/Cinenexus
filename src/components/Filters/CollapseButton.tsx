@@ -1,4 +1,4 @@
-import { TbLayoutSidebarLeftExpandFilled } from "react-icons/tb";
+import { TbFilter, TbLayoutSidebarLeftExpandFilled } from "react-icons/tb";
 import { TbLayoutSidebarLeftCollapseFilled } from "react-icons/tb";
 
 interface CollapseButtonProps {
@@ -27,11 +27,7 @@ const CollapseButton = ({
         title={isCollapsed ? "Expand filters" : "Collapse filters"}
         className="w-10 h-10 text-white bg-gray-700 rounded-full flex items-center justify-center"
       >
-        {isCollapsed ? (
-          <TbLayoutSidebarLeftExpandFilled className="w-6 h-6 pointer-events-none" />
-        ) : (
-          <TbLayoutSidebarLeftCollapseFilled className="w-6 h-6 pointer-events-none" />
-        )}
+        <TbFilter className="w-6 h-6 pointer-events-none" />
       </button>
       <div className="overflow-hidden">
         <h2

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Star } from "lucide-react";
+import { TbStar, TbStarFilled } from "react-icons/tb";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -34,14 +34,11 @@ const FavoritesButton = ({
         "group"
       )}
     >
-      <Star
-        className={cn(
-          "w-6 h-6 transition-all duration-300",
-          isFavorite
-            ? "fill-purple-400 text-purple-400"
-            : "text-gray-700 group-hover:text-purple-400"
-        )}
-      />
+      {isFavorite ? (
+        <TbStarFilled className="w-6 h-6 text-purple-400 transition-all duration-300" />
+      ) : (
+        <TbStar className="w-6 h-6 text-gray-700 group-hover:text-purple-400 transition-all duration-300" />
+      )}
     </motion.button>
   );
 };
