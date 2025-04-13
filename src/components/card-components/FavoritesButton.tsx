@@ -29,8 +29,8 @@ const FavoritesButton = ({
       onClick={handleClick}
       title="Add to favorites"
       className={cn(
-        "transition-all duration-300 p-3 rounded-full bg-black/70 shadow",
-        "hover:brightness-150",
+        "transition-all duration-300 p-3 rounded-full",
+        "hover:bg-purple-500/20",
         "group"
       )}
     >

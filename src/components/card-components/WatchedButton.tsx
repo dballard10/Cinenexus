@@ -30,7 +30,7 @@ const WatchedButton = ({
       title="Mark as watched"
       className={cn(
         "transition-all duration-300 p-3 rounded-full",
-        "hover:brightness-125",
+        "hover:bg-blue-500/20",
         "group"
       )}
     >
@@ -38,7 +38,7 @@ const WatchedButton = ({
         className={cn(
           "w-6 h-6 transition-all duration-300",
           isWatched
-            ? "fill-blue-500 text-blue-500"
+            ? "text-blue-500"
             : "text-gray-700 group-hover:text-blue-500"
         )}
       />

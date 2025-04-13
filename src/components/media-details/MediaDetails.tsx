@@ -10,6 +10,7 @@ import MediaGenres from "./MediaGenres";
 import MediaProductionCompanies from "./MediaProductionCompanies";
 import MediaProviders from "./MediaProviders";
 import Separator from "../page-components/Separator";
+import WatchedButton from "../card-components/WatchedButton";
 
 const MediaDetails = ({ title }: { title: string }) => {
   const selectedShow = useMediaStore((state) => state.selectedShow);
@@ -25,6 +26,7 @@ const MediaDetails = ({ title }: { title: string }) => {
           </div>
           <div className="flex gap-2">
             <Rating rating={selectedShow.vote_average} />
+            <WatchedButton showId={selectedShow.id} />
             <FavoritesButton showId={selectedShow.id} />
           </div>
         </div>
