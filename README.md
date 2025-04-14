@@ -54,8 +54,8 @@ Follow these steps to get a local copy up and running.
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/cinetik.git
-   cd Cinetik
+   git clone https://github.com/yourusername/cinetik-frontend.git
+   cd cinetik-frontend
    ```
 
 2. **Install Dependencies**
