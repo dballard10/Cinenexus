@@ -15,7 +15,7 @@ const useTrending = () => {
   };
 
   return useQuery({
-    queryKey: ["popular"],
+    queryKey: ["trending"],
     queryFn: async () => {
       const response = await axios.request(options);
 

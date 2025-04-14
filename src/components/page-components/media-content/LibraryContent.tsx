@@ -1,16 +1,18 @@
 import GridHeading from "@/components/media-grids/GridHeading";
 import SearchBar from "@/components/filters/SearchBar";
-import useTrendingMovies from "@/hooks/movies/use-trending-movies";
-import MediaGrid from "@/components/media-grids/MediaGrid";
+import FavoritesGrid from "@/components/media-grids/FavoritesGrid";
+import WatchedGrid from "@/components/media-grids/WatchedGrid";
 
-const ProfileContent = () => {
+const LibraryContent = () => {
   return (
     <>
       <SearchBar />
-      <GridHeading title="What you've been watching" />
-      <MediaGrid useMediaHook={useTrendingMovies} />
+      <GridHeading title="Your Favorites" />
+      <FavoritesGrid />
+      <GridHeading title="Your Watches" />
+      <WatchedGrid />
     </>
   );
 };
 
-export default ProfileContent;
+export default LibraryContent;

@@ -5,16 +5,18 @@ interface CardGridProps {
   media: Media[];
 }
 
-const CardGrid = ({ media: shows }: CardGridProps) => {
+const CardGrid = ({ media: content }: CardGridProps) => {
+  console.log(content);
+
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-      {shows.map((show, index) => (
+      {content.map((item, index) => (
         <Card
-          key={`${show.id}-${index}`}
-          id={show.id}
-          name={show.name}
-          backdrop_path={show.backdrop_path}
-          media_type={show.media_type as "tv" | "movie"}
+          key={`${item.id}-${index}`}
+          id={item.id}
+          name={item.name}
+          backdrop_path={item.backdrop_path}
+          media_type={item.media_type as "tv" | "movie"}
         />
       ))}
     </div>
