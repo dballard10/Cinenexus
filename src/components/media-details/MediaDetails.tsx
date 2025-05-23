@@ -1,4 +1,3 @@
-import useMediaStore from "@/hooks/use-media-store";
 import Rating from "./Rating";
 import FavoritesButton from "../card-components/FavoritesButton";
 import MediaImages from "./Images";
@@ -11,6 +10,7 @@ import MediaProductionCompanies from "./MediaProductionCompanies";
 import MediaProviders from "./MediaProviders";
 import Separator from "../page-components/Separator";
 import WatchedButton from "../card-components/WatchedButton";
+import useMediaStore from "@/hooks/use-media-store";
 
 const MediaDetails = ({ title }: { title: string }) => {
   const selectedShow = useMediaStore((state) => state.selectedShow);

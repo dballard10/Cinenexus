@@ -1,8 +1,8 @@
 import FavoritesButton from "./FavoritesButton";
 import MediaTitle from "./MediaTitle";
 import CardImage from "./CardImage";
-import useMediaStore from "@/hooks/use-media-store";
 import MediaType from "./MediaType";
+import useMediaStore from "@/hooks/use-media-store";
 import useMediaDetails from "@/hooks/media-details/use-media-details";
 import WatchedButton from "./WatchedButton";
 
